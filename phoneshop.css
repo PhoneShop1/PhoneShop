@@ -1,0 +1,27 @@
+.navbar{
+	background-color:#80ffff;
+}
+#show{
+	margin-left: 6.5%;
+}
+#list{
+	margin-right: 6%;
+}
+#container {
+	width: 100%;
+}
+#b {
+	margin-left: 3%;
+	background-color: lightgray;
+
+}
+#pageheader{
+	height: 50px;
+}
+#menu{
+	text-align: center;
+}
+#brand{
+	height: 250px;
+
+}
