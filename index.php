@@ -88,8 +88,8 @@
 				</div>
 			</div>
 		</div>
-		
-			<div class="thumbnail panel panel-default  col-md-8 col-xs-8 col-sm-8" >
+        <div class="thumbnail panel panel-default  col-md-8 col-xs-8 col-sm-8" >
+			<div class="thumbnail panel panel-default  col-md-12 col-xs-12 col-sm-12" >
 				<nav class="navbar navbar-default" id="pageheader">
 					<div class="container-fluid">
 						<div class="navbar-header">
@@ -102,11 +102,8 @@
 							</a>
 						</div>
 					</div>
-					
-						
-					
-					
 				</nav>
+
 				<div class="panel-default col-md-2 col-xs-2 col-sm-2" id="show">
 					<div class="thumbnail">
 
@@ -149,29 +146,9 @@
 						</div>
 					</div>
 				</div>
-
-
 			</div>
-			<div class="panel col-md-2 col-xs-2 col-sm-2" style="background-color: #f0f0f5">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title" id="menu">Accessories</h3>
-					</div>
-					<div class="panel-body">
-						Panel content
-					</div>
-					<div class="panel-body">
-						Panel content
-					</div>
-					<div class="panel-body">
-						Panel content
-					</div>
-					<div class="panel-body">
-						Panel content
-					</div>
-				</div>
-			</div>
-			<div class="thumbnail panel panel-default col-lg-offset-2 col-md-8 col-xs-8 col-sm-8" >
+
+			<div class="thumbnail panel panel-default col-md-12 col-xs-12 col-sm-12" >
 				<nav class="navbar navbar-default" id="pageheader">
 					<div class="container-fluid">
 						<div class="navbar-header">
@@ -188,7 +165,7 @@
 				</nav>
 				<div class="panel-default col-md-2 col-sm-2 col-sm-2" id="show">
 					<div class="thumbnail">
-						<img src="img\s8+.jpg" alt="...">
+						<img src="img\s88.jpg" alt="...">
 						<div class="caption">
 							
 							<p>Samsung Galaxy S8+</p>
@@ -226,10 +203,9 @@
 						</div>
 					</div>
 				</div>
-				
-
 			</div>
-			<div class="thumbnail panel panel-default col-md-offset-2 col-xs-offset-2 col-sm-offset-2 col-md-8 col-xs-8 col-sm-8" >
+<!--            Samsung-->
+			<div class="thumbnail panel panel-default  col-md-12 col-xs-12 col-sm-12" >
 				<nav class="navbar navbar-default" id="pageheader">
 					<div class="container-fluid">
 						<div class="navbar-header">
@@ -287,7 +263,7 @@
 				
 
 			</div>
-			<div class="thumbnail panel panel-default col-md-offset-2 col-xs-offset-2 col-sm-offset-2 col-md-8 col-xs-8 col-sm-8" >
+			<div class="thumbnail panel panel-default col-md-12 col-xs-12 col-sm-12" >
 				<nav class="navbar navbar-default" id="pageheader">
 					<div class="container-fluid">
 						<div class="navbar-header">
@@ -345,7 +321,7 @@
 				
 
 			</div>
-			<div class="thumbnail panel panel-default col-md-offset-2 col-xs-offset-2 col-sm-offset-2 col-md-8 col-xs-8 col-sm-8" >
+			<div class="thumbnail panel panel-default  col-md-12 col-xs-12 col-sm-12" >
 				<nav class="navbar navbar-default" id="pageheader">
 					<div class="container-fluid">
 						<div class="navbar-header">
@@ -400,9 +376,31 @@
 						</div>
 					</div>
 				</div>
-				
-
-			</div>
+            </div>
+        </div>
+        <div class="panel col-md-2 col-xs-2" style="background-color: #f0f0f5">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title" id="menu">Phones</h3>
+                </div>
+                <div class="panel-body">
+                    Samsung
+                </div>
+                <div class="panel-body">
+                    Huawei
+                </div>
+                <div class="panel-body">
+                    Oppo
+                </div>
+                <div class="panel-body">
+                    Sugar
+                </div>
+                <div class="panel-body">
+                    Iphone
+                </div>
+            </div>
+        </div>
+        </div>
 			
 		
 	</body>
