@@ -22,6 +22,9 @@
 	text-align: center;
 }
 #brand{
-	height: 250px;
-
+	height: 150px;
+}
+textarea{
+	width: 80%;
+	height: 40px;
 }

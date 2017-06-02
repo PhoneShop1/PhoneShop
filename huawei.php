@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:color="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 	<title>Heng Lay Phone Shop</title>
 	<link rel="stylesheet" type="text/css" href="Public/vendors/bootstrap/css/bootstrap.min.css">
@@ -52,7 +52,7 @@
 	</nav>
 	<div class="container col-md-12 col-xs-12 col-sm-12" id="r">
 		<div class=" col-md-6 col-xs-6" >
-			<img src="img/phoneshop.svg">
+			<img src="img/hl.png">
 
 		</div>
 		<div class=" col-md-6 col-xs-6 col-sm-6" style="text-align: right;>

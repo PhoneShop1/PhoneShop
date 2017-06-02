@@ -51,7 +51,7 @@
 		</div><!-- /.container-fluid -->
 	</nav>
 	<div class="container col-md-12 col-xs-12 col-sm-12">
-		<div class=" col-md-6 col-xs-6"  >
+		<div class=" col-md-6 col-xs-6" id="brand" >
 			<img src="img/phoneshop.svg">
 
 		</div>
@@ -109,6 +109,7 @@
 				</nav>
 				<div class="panel-default col-md-2 col-xs-2 col-sm-2" id="show">
 					<div class="thumbnail">
+
 						<img src="img\P10.jpg" alt="...">
 						<p>Huawei P10</p>
 
@@ -187,7 +188,7 @@
 				</nav>
 				<div class="panel-default col-md-2 col-sm-2 col-sm-2" id="show">
 					<div class="thumbnail">
-						<img src="img\s88.jpg" alt="...">
+						<img src="img\s8+.jpg" alt="...">
 						<div class="caption">
 							
 							<p>Samsung Galaxy S8+</p>
