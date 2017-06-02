@@ -22,7 +22,7 @@ $Protection=$_REQUEST['Protection'];
 //    $ki = $_POST['hengly'];
 //    $sql = "insert into test (hi) values ('$ki')";
 
-$sql = "insert into network (Technology,2GBrand,3GBrand,4GBrand,Speed,GPRS,EDGE,Announced,Status,Dimensions,Weight,Build,SIM,Typee,Sizee,Resolution,Multitouch,Protection)
+$sql = "insert into network (Technology,TwoGBrand,ThreeGBrand,FourGBrand,Speed,GPRS,EDGE,Announced,Status,Dimensions,Weight,Build,SIM,Typee,Sizee,Resolution,Multitouch,Protection)
 values('$technology','$tGBrand','$thGBrand','$fGBrand','$Speed','$GPRS','$EDGE','$Announced','$Status','$Dimensions','$Weight','$Build','$SIM','$Typee','$Sizee','$Resolution','$Multitouch','$Protection')";
 
     $result = $conn->query($sql);

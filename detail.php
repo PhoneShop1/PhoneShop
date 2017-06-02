@@ -82,7 +82,28 @@
                 $count=$result->num_rows;
                 if($count>0){
                     while ($row=$result->fetch_object()){
-                        echo "<div class='col-md-12'><div>Technology</div><div>$row->Technology</div></div>";
+                        echo "<div class='col-md-12' style='border: 1px solid'>
+                                <div class='col-md-5'>Technology</div>
+                                    <div class='col-md-7' style='border: 1px solid'>
+                                        <div class='panel page-header' style='background: red'>Technology: $row->Technology</div>
+                                        <div>2GBrand: $row->TwoGBrand</div>
+                                        <div>$row->ThreeGBrand</div>
+                                        <div>$row->FourGBrand</div>
+                                        <div>$row->Speed</div>
+                                        <div>$row->GPRS</div>
+                                        <div>$row->EDGE</div>
+                                        <div>$row->Announced</div>
+                                        <div>$row->Status</div>
+                                        <div>$row->Dimensions</div>
+                                        <div>$row->Weight</div>
+                                    </div>
+                                 </div>
+                                 
+                                 
+                                 
+                                 
+                                 ";
+
                     }
                 }
             ?>
