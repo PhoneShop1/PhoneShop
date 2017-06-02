@@ -14,58 +14,58 @@
 <!--        </form>-->
     <form action="createDBF.php" class="col-md-12" method="request">
         <div class="col-md-12">
-            <textarea name="technology" >Technology:</textarea>
+            <textarea name="technology" placeholder="Technology" ></textarea>
         </div>
         <div class="col-md-12">
-            <textarea name="tGBrand">2GBrand: </textarea>
+            <textarea name="tGBrand" placeholder="2GBrand"> </textarea>
         </div>
         <div class="col-md-12">
-            <textarea name="thGBrand">3GBrands: </textarea>
+            <textarea name="thGBrand" placeholder="3GBrands"></textarea>
         </div>
         <div class="col-md-12">
-            <textarea name="fGBrand">4GBrand: </textarea>
+            <textarea name="fGBrand" placeholder="4GBrand"> </textarea>
         </div>
         <div class="col-md-12">
-            <textarea name="Speed">Speed: </textarea>
+            <textarea name="Speed" placeholder="Speed"> </textarea>
         </div>
         <div class="col-md-12">
-            <textarea name="GPRS">GPRS: </textarea>
+            <textarea name="GPRS" placeholder="GPRS"> </textarea>
         </div>
         <div class="col-md-12">
-            <textarea name="EDGE">EDGE: </textarea>
+            <textarea name="EDGE" placeholder="EDGE"> </textarea>
         </div>
         <div class="col-md-12">
-            <textarea name="Announced">Announced: </textarea>
+            <textarea name="Announced" placeholder="Announced"> </textarea>
         </div>
         <div class="col-md-12">
-            <textarea name="Status">Status: </textarea>
+            <textarea name="Status" placeholder="Status "></textarea>
         </div>
         <div class="col-md-12">
-            <textarea name="Dimensions">Dimensions: </textarea>
+            <textarea name="Dimensions" placeholder="Dimensions"> </textarea>
         </div>
         <div class="col-md-12">
-            <textarea name="Weight">Weight: </textarea>
+            <textarea name="Weight" placeholder="Weight"></textarea>
         </div>
         <div class="col-md-12">
-            <textarea name="Build">Build: </textarea>
+            <textarea name="Build" placeholder="Build"> </textarea>
         </div>
         <div class="col-md-12">
-            <textarea name="SIM">SIM: </textarea>
+            <textarea name="SIM" placeholder="SIM"> </textarea>
         </div>
         <div class="col-md-12">
-            <textarea name="Typee">Type: </textarea>
+            <textarea name="Typee" placeholder="Type"> </textarea>
         </div>
         <div class="col-md-12">
-            <textarea name="Sizee">Size: </textarea>
+            <textarea name="Sizee" placeholder="Size"> </textarea>
         </div>
         <div class="col-md-12">
-            <textarea name="Resolution">Resolution: </textarea>
+            <textarea name="Resolution" placeholder="Resolution"> </textarea>
         </div>
         <div class="col-md-12">
-            <textarea name="Multitouch">Multitouch: </textarea>
+            <textarea name="Multitouch" placeholder="Multitouch"> </textarea>
         </div>
         <div class="col-md-12">
-            <textarea name="Protection">Protection: </textarea>
+            <textarea name="Protection" placeholder="Protection"></textarea>
         </div>
         <div class="col-md-offset-10 col-md-2">
             <button type="submit" name="submit">Enter</button>
