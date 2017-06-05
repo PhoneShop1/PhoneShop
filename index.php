@@ -8,6 +8,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="phoneshop.css">
+    <script src="phoneshop.js"></script>
 </head>
 <body style="background-color: #f0f0f5;">
 	<nav class="navbar navbar-default">
@@ -32,21 +33,33 @@
 					</div>
 					<button type="submit" class="btn btn-default">Search</button>
 				</form>
-				<!-- <ul class="nav navbar-nav navbar-right">
-					
+				<ul class="nav navbar-nav navbar-right">
+
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Action</a></li>
-							<li><a href="#">Another action</a></li>
-							<li><a href="#">Something else here</a></li>
-							<li role="separator" class="divider"></li>
-							<li><a href="#">Separated link</a></li>
-							<li role="separator" class="divider"></li>
-							<li><a href="#">One more separated link</a></li>
+                            <form action="/action_page.php">
+                                <div class="container">
+                                    <label><b>Email</b></label>
+                                    <input type="text" placeholder="Enter Email" name="email" required>
+
+                                    <label><b>Password</b></label>
+                                    <input type="password" placeholder="Enter Password" name="psw" required>
+
+                                    <label><b>Repeat Password</b></label>
+                                    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                                    <input type="checkbox" checked="checked"> Remember me
+                                    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+                                    <div class="clearfix">
+                                        <button type="button"  class="cancelbtn">Cancel</button>
+                                        <button type="submit" class="signupbtn">Sign Up</button>
+                                    </div>
+                                </div>
+                            </form>
 						</ul>
 					</li>
-				</ul> -->
+				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 	</nav>
