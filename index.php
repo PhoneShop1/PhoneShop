@@ -36,28 +36,44 @@
 				<ul class="nav navbar-nav navbar-right">
 
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-                            <form action="/action_page.php">
-                                <div class="container">
-                                    <label><b>Email</b></label>
-                                    <input type="text" placeholder="Enter Email" name="email" required>
+                        <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button>
 
-                                    <label><b>Password</b></label>
-                                    <input type="password" placeholder="Enter Password" name="psw" required>
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
 
-                                    <label><b>Repeat Password</b></label>
-                                    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-                                    <input type="checkbox" checked="checked"> Remember me
-                                    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-
-                                    <div class="clearfix">
-                                        <button type="button"  class="cancelbtn">Cancel</button>
-                                        <button type="submit" class="signupbtn">Sign Up</button>
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header" style="padding:35px 50px;">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+                                    </div>
+                                    <div class="modal-body" style="padding:40px 50px;">
+                                        <form role="form">
+                                            <div class="form-group">
+                                                <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+                                                <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+                                                <input type="text" class="form-control" id="psw" placeholder="Enter password">
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input type="checkbox" value="" checked>Remember me</label>
+                                            </div>
+                                            <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                                        <p>Not a member? <a href="#">Sign Up</a></p>
+                                        <p>Forgot <a href="#">Password?</a></p>
                                     </div>
                                 </div>
-                            </form>
-						</ul>
+
+                            </div>
+                        </div>
+            </div>
 					</li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
@@ -414,7 +430,7 @@
             </div>
         </div>
         </div>
-			
-		
+
+
 	</body>
 	</html>
