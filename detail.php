@@ -75,9 +75,34 @@
             <div class="col-md-12" >
                 <form action="Network.php" >
                     <button type="network">Add</button>
+
+
                 </form>
+                <form action="#up-$row->id" method="request" ><button  type="button" data-toggle="modal" data-target="#up-$row->id" >Edit</button></form>
+                <!-- Modal -->
+                <div class="modal fade" id="up-$row->id" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="align-self: right;display:">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Edit</h4>
+                            </div>
+                            <form action="edit.php" method="request">
+                                <div class="modal-body" >
+
+                                    <input class="form-control" type='hidden' value=$row->id name='id'>
+                                    <textarea class="form-control textedit" value=$row->Technology name="Technology"  >$row->Technology</textarea>
+                                </div>
+                                <div class="modal-footer " >
+                                    <button type="sumbit" class="btn btn-primary " name="save">Save</button>
+                                </div>
+                             </form>
+                        </div>
+                     </div>
+                </div>
                 <table class="col-md-12">
-                    <?php
+
+                           <?php
                         require_once ('dbconf.php');
                         $sql="select *from network order by id";
                         $result = $conn->query($sql);
@@ -85,7 +110,10 @@
                         if($count>0){
                             while ($row=$result->fetch_object()){
 
-                                echo "<div class='col-md-12'>
+                                echo "    
+                                            <div class='col-md-12'>
+                                               
+                                                <div class='col-md-12'>
                 
                                                 <tr >
                                                     <td rowspan='7' style='width: 20%'><div>Network</div></td>
@@ -148,9 +176,10 @@
                                                 <tr><td>Music</td><td>Colors</td><td><div>$row->Colors</div></td></tr>
                                                 
                                                 
-                                                
+                                                </div>
                                                 
                                             </div>
+                      
       
                                          ";
 

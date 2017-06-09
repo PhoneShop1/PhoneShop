@@ -10,7 +10,7 @@ $EDGE=$_REQUEST['EDGE'];
 $Announced=$_REQUEST['Announced'];
 $Status=$_REQUEST['Status'];
 $Dimensions=$_REQUEST['Dimensions'];
-$Weight=$_REQUEST['Weight '];
+$Weight=$_REQUEST['Weight'];
 $Build=$_REQUEST['Build'];
 $SIM=$_REQUEST['SIM'];
 $Typee=$_REQUEST['Typee'];
@@ -45,6 +45,7 @@ $Colors=$_REQUEST['Colors'];
 $Battery=$_REQUEST['Battery'];
 
 
+
 //    $ki = $_POST['hengly'];
 //    $sql = "insert into test (hi) values ('$ki')";
 
@@ -56,7 +57,7 @@ USB,Sensors,Messaging,Brower,Java,Colors,Battery)
 values('$technology','$tGBrand','$thGBrand','$fGBrand','$Speed','$GPRS','$EDGE',
 '$Announced','$Status','$Dimensions','$Weight','$Build','$SIM','$Typee','$Sizee',
 '$Resolution','$Multitouch','$Protection','$OS','$Chipset','$CPU','$GPU','$Card',
-'$Internal','$Primaryy','$Features','$Video','$Secondary','$Alert','$Loundspeaker',
+'$Internal','$Primary','$Features','$Video','$Secondary','$Alert','$Loundspeaker',
 '$jack','$WLAN','$Bluetooth','$GPS','$NFC','$Radio','$USB','$Sensors','$Messaging',
 '$Brower','$Java','$Colors','$Battery')";
 
