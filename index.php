@@ -70,7 +70,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-                                        <p>Not a member? <a href="#">Sign Up</a></p>
+                                        <p>Not a member? <a href="Login.php">Sign Up</a></p>
                                         <p>Forgot <a href="#">Password?</a></p>
                                     </div>
                                 </div>
