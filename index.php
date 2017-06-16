@@ -11,6 +11,7 @@
     <script src="phoneshop.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -37,46 +38,65 @@
 					</div>
 					<button type="submit" class="btn btn-default">Search</button>
 				</form>
-				<ul class="nav navbar-nav navbar-right">
 
+				<ul class="nav navbar-nav navbar-right">
+<!--                    <p><a href="LogOut.php" class="btn btn-info btn-block" id="myBtn">Log Out</a></p>-->
 					<li class="dropdown">
+<!--                        <button type="button" class="btn btn-default btn-lg"><a href="LogOut.php">log out</a></button>-->
+
                         <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button>
 
                         <!-- Modal -->
                         <div class="modal fade" id="myModal" role="dialog">
-                            <div class="modal-dialog">
-
-                                <!-- Modal content-->
+                            <div id="login-overlay" class="modal-dialog">
                                 <div class="modal-content">
-                                    <div class="modal-header" style="padding:35px 50px;">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Login to henglay.com</h4>
                                     </div>
-                                    <div class="modal-body" style="padding:40px 50px;">
-                                        <form role='form' method="post" name="logForm" action="postLogin.php">
-                                            <div class="form-group">
-                                                <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-                                                <input type="text" class="form-control" name="first_Name" placeholder="Enter email">
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <div class="well">
+                                                    <form id="loginForm" method="POST" action="postLogin.php" novalidate="novalidate">
+                                                        <div class="form-group">
+                                                            <label for="username" class="control-label">Username</label>
+                                                            <input type="text" class="form-control" id="username" name="first_Name" value="" required="" title="Please enter you username" placeholder="example@gmail.com">
+                                                            <span class="help-block"></span>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="password" class="control-label">Password</label>
+                                                            <input type="password" class="form-control" id="password" name="passWord" value="" required="" title="Please enter your password">
+                                                            <span class="help-block"></span>
+                                                        </div>
+                                                        <div id="loginErrorMsg" class="alert alert-error hide">Wrong username og password</div>
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" name="r" id="remember"> Remember login
+                                                            </label>
+                                                            <p class="help-block">(if this is a private computer)</p>
+                                                        </div>
+                                                        <button type="submit" class="btn btn-success btn-block">Login</button>
+                                                        <a href="/forgot/" class="btn btn-default btn-block">Help to login</a>
+                                                    </form>
+                                                </div>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-                                                <input type="text" class="form-control" name="passWord" placeholder="Enter password">
+                                            <div class="col-xs-6">
+                                                <p class="lead">Register now for <span class="text-success">FREE</span></p>
+                                                <ul class="list-unstyled" style="line-height: 2">
+                                                    <li><span class="fa fa-check text-success"></span> See all your orders</li>
+                                                    <li><span class="fa fa-check text-success"></span> Fast re-order</li>
+                                                    <li><span class="fa fa-check text-success"></span> Save your favorites</li>
+                                                    <li><span class="fa fa-check text-success"></span> Fast checkout</li>
+                                                    <li><span class="fa fa-check text-success"></span> Get a gift <small>(only new customers)</small></li>
+                                                    <li><a href="/read-more/"><u>Read more</u></a></li>
+                                                </ul>
+                                                <p><a href="SignUp.php" class="btn btn-info btn-block">Yes please, register now!</a></p>
                                             </div>
-                                            <div class="checkbox">
-                                                <label><input type="checkbox" value="r" checked>Remember me</label>
-                                            </div>
-                                            <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-                                        <p>Not a member? <a href="SignUp.php">Sign Up</a></p>
-                                        <p>Forgot <a href="#">Password?</a></p>
+                                        </div>
                                     </div>
                                 </div>
-
                             </div>
-                        </div>
             </div>
 					</li>
 				</ul>
