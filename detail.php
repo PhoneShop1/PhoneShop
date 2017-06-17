@@ -69,7 +69,7 @@
     <div class="col-md-12  ">
         <div class="thumbnail panel panel-default  col-md-8 col-md-offset-2 col-xs-8 col-sm-8" >
             <div class="col-md-12" >
-                <form action="postImage.php" >
+                <form action="Network.php" >
                     <button type="network">Add</button>
                 </form>
             </div>
