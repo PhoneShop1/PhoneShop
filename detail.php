@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="Phoneshop.css">
+    <link rel="stylesheet" type="text/css" href="phoneshoP.css">
 </head>
 <body style="background-color: #f0f0f5;">
 <nav class="navbar navbar-default">
@@ -66,56 +66,144 @@
     </div>
 </div>
 <div class="container col-md-11  col-sm-11 col-xs-11 " id="container" >
-    <div class="col-md-12">
-        <div class="panel col-md-2 col-xs-2" style="background-color: #f0f0f5;">
-
-        </div>
-
-        <div class="thumbnail panel panel-default  col-md-8 col-xs-8 col-sm-8" >
+    <div class="col-md-12  ">
+        <div class="thumbnail panel panel-default  col-md-8 col-md-offset-2 col-xs-8 col-sm-8" >
             <div class="col-md-12" >
-                <form action="Network.php" >
+                <form action="postImage.php" >
                     <button type="network">Add</button>
-
-
                 </form>
-                <form action="#up-$row->id" method="request" ><button  type="button" data-toggle="modal" data-target="#up-$row->id" >Edit</button></form>
+            </div>
+                           <?php
+//                        require_once ('dbconf.php');
+//                        $sql="select * from network where id=(select max(network.id) from network)";
+//                        $result = $conn->query($sql);
+//                        $count=$result->num_rows;
+                           $db = mysqli_connect("localhost","root","","phoneshop");
+                           $sql = "select * from network where id=(select max(network.id) from network)";
+                           $result = mysqli_query($db,$sql);
+                           while ($row = mysqli_fetch_object($result)) {
+                               echo "
+            
+                <div id=\"$row->id\" class=\"flex-item-2\">
+                    <div class='col-md-12  col-sm-12'>
+                        <div  class='col-md-1 col-md-offset-5' method=\"request\">
+                            <a href=\"delete.php?id=$row->id\" onClick=\"return confirm('Are you sure you want to delete?')\"><button>Delete
+                                </button>
+                            </a>
+                        </div>
+                        <div  action=\"detail.php\"   method=\"request\">
+                            <button  type='button'  data-toggle='modal' data-target='#up-$row->id'>
+                                Edit
+                            </button>
+						</div>
+                    </div>
+                </div>
                 <!-- Modal -->
-                <div class="modal fade" id="up-$row->id" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="align-self: right;display:">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel">Edit</h4>
+                <div class=\"modal fade\" id=\"up-$row->id \" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" style=\"align-self: right;display:\">
+                    <div class=\"modal-dialog\" role=\"document\">
+                        <div class=\"modal-content\">
+                            <div class=\"modal-header\">
+                                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>
+                                <h4 class=\"modal-title\" id=\"myModalLabel\">Edit</h4>
                             </div>
-                            <form action="edit.php" method="request">
-                                <div class="modal-body" >
-
-                                    <input class="form-control" type='hidden' value=$row->id name='id'>
-                                    <textarea class="form-control textedit" value=$row->Technology name="Technology"  >$row->Technology</textarea>
+                            <form action=\"edit.php\" method=\"request\">
+                                <div class=\"modal-body\" >
+                                    <input class=\"form-control\" type='hidden' value=$row->id name='id'>
+                                    
+                                    <textarea class=\"form-control textedit\" value=$row->namee name=\"namee\">$row->namee</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->price name=\"price\">$row->price</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->brand name=\"brand\">$row->brand</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->memory name=\"memory\">$row->memory</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->sime name=\"sime\">$row->sime</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->warr name=\"warr\">$row->warr</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->colords name=\"colords\">$row->colords</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->statues name=\"statues\">$row->statues</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->remark name=\"remark\">$row->remark</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Technology name=\"Technology\">$row->Technology</textarea>
+                                    <div class=\"col-md-offset-10 col-md-2\"><button type=\"submit\" name=\"submit\">Enter</button></div>
+                                    <textarea class=\"form-control textedit\" value=$row->TwoGBrand name=\"TwoGBrand\">$row->TwoGBrand</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->ThreeGBrand name=\"ThreeGBrand\">$row->ThreeGBrand</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->FourGBrand name=\"FourGBrand\">$row->FourGBrand</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Speed name=\"Speed\">$row->Speed</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->GPRS name=\"GPRS\">$row->GPRS</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->EDGE name=\"EDGE\">$row->EDGE</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Announced name=\"Announced\">$row->Announced</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Status name=\"Status\">$row->Status</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Dimensions name=\"Dimensions\">$row->Dimensions</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Weight name=\"Weight\">$row->Weight</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Build name=\"Build\">$row->Build</textarea>
+                                    <textarea nclass=\"form-control textedit\" value=$row->SIM name=\"SIM\">$row->SIM</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Typee name=\"Typee\">$row->Typee</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Sizee name=\"Sizee\">$row->Sizee</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Resolution name=\"Resolution\">$row->Resolution</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Multitouch name=\"Multitouch\">$row->Multitouch</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Protection name=\"Protection\">$row->Protection</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->OS name=\"OS\">$row->OS</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Chipset name=\"Chipset\">$row->Chipset</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->CPU name=\"CPU\">$row->CPU</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->GPU name=\"GPU\">$row->GPU</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Card name=\"Card\">$row->Card</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Internal name=\"Internal\">$row->Internal</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Primaryy name=\"Primaryy\">$row->Primaryy</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Features name=\"Features\">$row->Features</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Video name=\"Video\">$row->Video</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Secondary name=\"Secondary\">$row->Secondary</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Alert name=\"Alert\">$row->Alert</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Loundspeaker name=\"Loundspeaker\">$row->Loundspeaker</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->jack name=\"jack\">$row->jack</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->WLAN name=\"WLAN\">$row->WLAN</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Bluetooth name=\"Bluetooth\">$row->Bluetooth</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->GPS name=\"GPS\">$row->GPS</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->NFC name=\"NFC\">$row->NFC</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Radio name=\"Radio\">$row->Radio</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->USB name=\"USB\">$row->USB</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Sensors name=\"Sensors\">$row->Sensors</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Messaging name=\"Messaging\">$row->Messaging</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Brower name=\"Brower\">$row->Brower</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Java name=\"Java\">$row->Java</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Colors name=\"Colors\">$row->Colors</textarea>
+                                    <textarea class=\"form-control textedit\" value=$row->Battery name=\"Battery\">$row->Battery</textarea>
                                 </div>
-                                <div class="modal-footer " >
-                                    <button type="sumbit" class="btn btn-primary " name="save">Save</button>
+                                <div class=\"modal-footer \" >
+                                    <button type=\"sumbit\" class=\"btn btn-primary \" name=\"save\">Save</button>
                                 </div>
                              </form>
                         </div>
-                     </div>
+                    </div>
                 </div>
-                <table class="col-md-12">
-
-                           <?php
-                        require_once ('dbconf.php');
-                        $sql="select *from network order by id";
-                        $result = $conn->query($sql);
-                        $count=$result->num_rows;
-                        if($count>0){
-                            while ($row=$result->fetch_object()){
-
-                                echo "    
+            
                                             <div class='col-md-12'>
-                                               
+                                                
                                                 <div class='col-md-12'>
-                
-                                                <tr >
+                                                    
+                                                        <div class='col-md-6'>
+                                                            
+                                                            <img style='width: 80%;margin-top: 5%;margin-left: 10%;background-color: #c8ffff' class='panel panel-default' src='images/".$row->photo."'>
+                                                        </div>
+                                                        <div class='col-md-6'>
+                                                            <div class='col-md-12'>
+                                                                <div class='col-md-12'>
+                                                                    <div class='col-md-12'><h2>$row->namee</h2></td>
+                                                                    <div class='col-md-12'><h2>Price: <b style='color: red'>$row->price</b></h2></div>
+                                                                    
+                                                                </div>
+                                                                <div class='col-md-12'>
+                                                                    <table class=' table table-bordered'>
+                                                                        <tr><td style='width: 60%'>Brand</td><td>$row->brand</td></tr>
+                                                                        <tr><td>Internal Memory</td><td>$row->memory</td></tr>
+                                                                        <tr><td>SIM</td><td>$row->sime</td></tr>
+                                                                        <tr><td>Warranty</td><td>$row->warr</td></tr>
+                                                                        <tr><td>Color</td><td>$row->colords</td></tr>
+                                                                        <tr><td>Status</td><td>$row->statues</td></tr>
+                                                                        <tr><td>Remark</td><td>$row->remark</td></tr>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                                <div class='detailinf'>
+                                                   <table class='table table-bordered col-md-12'>
+                                                <tr>
                                                     <td rowspan='7' style='width: 20%'><div>Network</div></td>
                                                     <td style='width: 20%'><div>Technology</div></td>
                                                     <td >
@@ -175,23 +263,21 @@
                                                 <tr><td>Battery</td><td></td><td><div>$row->Battery</div></td></tr>
                                                 <tr><td>Music</td><td>Colors</td><td><div>$row->Colors</div></td></tr>
                                                 
-                                                
+                                                </table>
                                                 </div>
                                                 
                                             </div>
+                                            
                       
       
                                          ";
+                           }
+                           ?>
 
-                            }
-                        }
-                    ?>
-                </table>
             </div>
         </div>
 
 
-    </div>
 </div>
 
 

@@ -6,22 +6,25 @@
 
 </head>
 <body>
-<!--        <form action="createDBF.php" method="REQUEST">-->
-<!--            <textarea type="text" name="hengly"></textarea>-->
-<!--            <div class="col-md-offset-10 col-md-2">-->
-<!--                <button type="submit" name="submit">Enter</button>-->
-<!--            </div>-->
-<!--        </form>-->
 
     <div class="col-md-12">
-        <form action="createDBF.php" class="col-md-12" method="request">
-
-
-                <!--                </div>-->
-
-            <div class="col-md-12">
+        <form action="createDBF.php" method="post" enctype="multipart/form-data">
+            <input type="hidden"  name="size" value="1000000" />
+            <input type="file" name="photoImg" id="photoImg">
+            <div class="col-md-12"><textarea name="namey" placeholder="Name"></textarea></div>
+            <div class="col-md-12"><textarea name="price" placeholder="Price"></textarea> </div>
+            <div class="col-md-12"><textarea name="brand" placeholder="Brand"></textarea> </div>
+            <div class="col-md-12"><textarea name="memory" placeholder="Internal Memory"></textarea> </div>
+            <div class="col-md-12"><textarea name="sime" placeholder="SIM"></textarea></div>
+            <div class="col-md-12"><textarea name="warr" placeholder="Warranty"></textarea> </div>
+            <div class="col-md-12"><textarea name="colord" placeholder="Color"></textarea> </div>
+            <div class="col-md-12"><textarea name="statuss" placeholder="Status"></textarea> </div>
+            <div class="col-md-12"><textarea name="remark" placeholder="Remark"></textarea></div>
                 <div class="col-md-12">
                     <textarea name="technology" placeholder="Technology" ></textarea>
+                </div>
+                <div class="col-md-offset-10 col-md-2">
+                    <button type="submit" name="submit">Enter</button>
                 </div>
                 <div class="col-md-12">
                     <textarea name="tGBrand" placeholder="2GBrand"></textarea>
@@ -136,10 +139,8 @@
                 </div><div class="col-md-12">
                     <textarea name="Battery" placeholder="Battery"></textarea>
                 </div>
-                <div class="col-md-offset-10 col-md-2">
-                    <button type="submit" name="submit">Enter</button>
-                </div>
-            </div>
+
+
         </form>
 
     </div>
