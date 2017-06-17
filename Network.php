@@ -101,9 +101,8 @@ if (isset($_POST['upload'])) {
 <!--//        echo "</div>";-->
 <!--//    }-->
 
-<form method="post" action="postImage.php" enctype="multipart/form-data">
-    <div class="col-md-12">
-        <form action="postImage.php" method="post" enctype="multipart/form-data">
+
+        <form action="Network.php" method="post" enctype="multipart/form-data">
             <input type="hidden"  name="size" value="1000000" />
             <input type="file" name="image" />
             <div class="col-md-12"><textarea name="namey" placeholder="Name"></textarea></div>
@@ -236,6 +235,6 @@ if (isset($_POST['upload'])) {
             </div>
 
         </form>
-    </div>
+
 </body>
 </html>
