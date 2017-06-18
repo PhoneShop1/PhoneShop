@@ -58,6 +58,7 @@ if (isset($_POST['upload'])) {
     $statuss = $_POST['statuss'];
     $remark = $_POST['remark'];
 
+
     $sql = "insert into network (Technology,TwoGBrand,ThreeGBrand,FourGBrand,
     Speed,GPRS,EDGE,Announced,Status,Dimensions,Weight,Build,SIM,Typee,Sizee,
     Resolution,Multitouch,Protection,OS,Chipset,CPU,GPU,Card,Internal,Primaryy,
@@ -71,13 +72,19 @@ if (isset($_POST['upload'])) {
     '$jack','$WLAN','$Bluetooth','$GPS','$NFC','$Radio','$USB','$Sensors','$Messaging',
     '$Brower','$Java','$Colors','$Battery','$namey','$price','$brand','$memory','$sime',
     '$warr','$colord','$statuss','$remark','$photo')";
-
+echo $sql;
     mysqli_query($db, $sql);
 
     if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
         $msg = "Image Uploaded Successfully";
     } else {
         $msg = "There Was A problem uploading image";
+    }
+    $result = $db->query($sql);
+    if($result){
+        echo "New word created";
+    }else{
+        echo "Fail to create new word";
     }
     header('Location: detail.php');
 }
