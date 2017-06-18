@@ -93,6 +93,7 @@ echo $sql;
 <head>
     <title>Image Upload</title>
     <link rel="stylesheet" type="text/css" href="css/style_s.css">
+    <div></div>
 </head>
 <body>
 
