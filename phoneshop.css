@@ -170,3 +170,6 @@ textarea{
 #ab{
 	float: left;
 }
+#log_out{
+	display: none;
+}

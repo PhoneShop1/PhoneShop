@@ -45,7 +45,7 @@
 <!--                        <button type="button" class="btn btn-default btn-lg"><a href="LogOut.php">log out</a></button>-->
 
                         <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button>
-
+                        <button type="button" class="btn btn-default " id="log_out">Log out</button>
                         <!-- Modal -->
                         <div class="modal fade" id="myModal" role="dialog">
                             <div id="login-overlay" class="modal-dialog">
