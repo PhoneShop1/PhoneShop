@@ -14,6 +14,7 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body style="background-color: #f0f0f5;">
 	<nav class="navbar navbar-default">
@@ -224,7 +225,7 @@
 
                 <?php
                 require_once('dbconf.php');
-                $sql="select id,namee,photo from network where brand like'$model' limit 4";
+                $sql="select id,namee,photo from network where brand like'Samsung' limit 4";
                 $result = $conn->query($sql);
 
                     while ($row=mysqli_fetch_object($result)){
@@ -263,7 +264,7 @@
                     <?php
                     require_once('dbconf.php');
                     //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
-                    $sql="select id,namee,photo from network where brand like'$model' limit 4";
+                    $sql="select id,namee,photo from network where brand like 'iphone' limit 4";
                     $result = $conn->query($sql);
 
                     while ($row = mysqli_fetch_object($result)) {
@@ -304,7 +305,7 @@
                     <?php
                     require_once('dbconf.php');
                     //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
-                    $sql="select id,namee,photo from network where brand like'$model' limit 4";
+                    $sql="select id,namee,photo from network where brand like 'oppo' limit 4";
                     $result = $conn->query($sql);
 
                     while ($row = mysqli_fetch_object($result)) {
@@ -345,7 +346,7 @@
                         <?php
                         require_once('dbconf.php');
                         //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
-                        $sql="select id,namee,photo from network where brand like'$model'";
+                        $sql="select id,namee,photo from network where brand like 'sugar' limit 4";
                         $result = $conn->query($sql);
 
                         while ($row = mysqli_fetch_object($result)) {

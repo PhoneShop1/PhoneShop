@@ -28,6 +28,7 @@ if(isset($_POST['first_Name']) && $_POST['passWord']!= ''){
     $result = $conn->query($sql);
 
     if($result->num_rows > 0){
+
         session_start();
         $_SESSION['first_name'] = $first_Name;
         if($_POST['rememberMe'] == 'r'){
