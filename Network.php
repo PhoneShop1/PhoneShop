@@ -1,7 +1,7 @@
 <?php
 $msg = "";
 if (isset($_POST['upload'])) {
-    $target = "images/".basename($_FILES['image']['name']);
+    $target = "img/".basename($_FILES['image']['name']);
     $db = mysqli_connect("localhost", "root", "", "phoneshop");
     $photo = $_FILES['image']['name'];
 
@@ -86,14 +86,13 @@ echo $sql;
     }else{
         echo "Fail to create new word";
     }
-    header('Location: detail.php');
+//    header('Location: detail.php');
 }
 ?>
 <html>
 <head>
     <title>Image Upload</title>
     <link rel="stylesheet" type="text/css" href="css/style_s.css">
-    <div></div>
 </head>
 <body>
 

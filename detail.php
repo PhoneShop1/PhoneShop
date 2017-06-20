@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,12 +75,14 @@
                 </form>
             </div>
                            <?php
+                           $id=$_GET['id'];
+
 //                        require_once ('dbconf.php');
 //                        $sql="select * from network where id=(select max(network.id) from network)";
 //                        $result = $conn->query($sql);
 //                        $count=$result->num_rows;
                            $db = mysqli_connect("localhost","root","","phoneshop");
-                           $sql = "select * from network where id=(select max(network.id) from network)";
+                           $sql = "select * from network where id='$id'";
                            $result = mysqli_query($db,$sql);
                            while ($row = mysqli_fetch_object($result)) {
                                echo "
@@ -92,7 +95,7 @@
                             </a>
                         </div>
                         
-                            <a href='edit.php'>
+                            <a href='edit.php?id=$row->id'>
                             <button  type='button'  data-toggle='modal' data-target='#up-$row->id'>
                                 Edit
                             </button></a>

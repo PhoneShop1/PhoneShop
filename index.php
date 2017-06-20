@@ -174,55 +174,36 @@
 							
 						</div>
 						<div  class="navbar-header navbar-right" >
-							<a  href="huawei.php">
-								<button class="btn btn-default navbar-btn " >more</button>
+							<a  href="samsung.php?model=Huawei">
+								<button class="btn btn-default navbar-btn " id="btn">more</button>
 							</a>
 						</div>
 					</div>
 				</nav>
+                        <?php
+                        require_once('dbconf.php');
+//                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
+                        $sql="select id,namee,photo from network where brand like'Huawei'";
+                        $result = $conn->query($sql);
 
-				<div class="panel-default col-md-2 col-xs-2 col-sm-2" id="show">
-					<div class="thumbnail">
-
-						<img src="img\P10.jpg" alt="...">
-						<p>Huawei P10</p>
-
-						<div class="caption">
+                            while ($row = mysqli_fetch_object($result)) {
+                        echo"
+                            
+                                <a href='detail.php?id=$row->id' >
+                                   <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
+					<div class=\"thumbnail\">
+						<img src=\"img/".$row->photo."\" alt=\"...\">
+						<div class=\"caption\">
 							
-						</div>
-					</div>
-				</div>
+							$row->namee
 
-				<div class="panel-default col-md-2 col-xs-2 col-sm-2" id="show">
-					<div class="thumbnail">
-						<img src="img\p10plus.jpg" alt="...">
-						<p>Huawei P10Pluse</p>
-						<div class="caption">
-							
-							
+                            </div>
+                        </div>
+                    </div></a>
+                        ";
+                   }
 
-						</div>
-					</div>
-				</div>
-				<div class="panel-default col-md-2 col-xs-2 col-sm-2" id="show">
-					<div class="thumbnail">
-						<img src="img\GR5.png" alt="...">
-						<div class="caption">
-							
-							<p>Huawei GR5 2017</p>
-
-						</div>
-					</div>
-				</div>
-				<div class="panel-default col-md-2 col-xs-2 col-sm-2" id="show">
-					<div class="thumbnail">
-						<img src="img\GR5mini.jpg" alt="...">
-						<div class="caption">
-							
-							<p>Huawei GR5mini</p>
-						</div>
-					</div>
-				</div>
+                        ?>
 			</div>
 
 			<div class="thumbnail panel panel-default col-md-12 col-xs-12 col-sm-12" >
@@ -234,52 +215,34 @@
 							</a>
 						</div>
 						<div  class="navbar-header navbar-right" >
-							<a  href="samsung.php">
+							<a  href="samsung.php?model=Samsung">
 								<button class="btn btn-default navbar-btn " >more</button>
 							</a>
 						</div>
 					</div>
 				</nav>
-				<div class="panel-default col-md-2 col-sm-2 col-sm-2" id="show">
-					<div class="thumbnail">
-						<img src="img\s88.jpg" alt="...">
-						<div class="caption">
-							
-							<p>Samsung Galaxy S8+</p>
 
-						</div>
-					</div>
-				</div>
+                <?php
+                require_once('dbconf.php');
+                $sql="select id,namee,photo from network where brand like'$model' limit 4";
+                $result = $conn->query($sql);
 
-				<div class="panel-default col-md-2 col-sm-2 col-sm-2" id="show">
-					<div class="thumbnail">
-						<img src="img\s8.jpg" alt="...">
-						<div class="caption">
-							
-							<p>Samsung Galaxy S8</p>
-
-						</div>
-					</div>
-				</div>
-				<div class="panel-default col-md-2 col-sm-2 col-sm-2" id="show">
-					<div class="thumbnail">
-						<img src="img\A7.jpg" alt="...">
-						<div class="caption">
-							
-							<p>Samsung A7 2017</p>
-
-						</div>
-					</div>
-				</div>
-				<div class="panel-default col-md-2 col-sm-2 col-sm-2" id="show">
-					<div class="thumbnail">
-						<img src="img\J7prime.jpg" alt="...">
-						<div class="caption">
-							
-							<p>Samsung Galaxy J7 Prime</p>
-						</div>
-					</div>
-				</div>
+                    while ($row=mysqli_fetch_object($result)){
+                    echo "
+                        <a href='detail.php?id=$row->id' >
+                            <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
+                                <div class=\"thumbnail\">
+                                    <img src=\"img/".$row->photo."\" alt=\"...\">
+                                    <div class=\"caption\">
+                                        $row->namee
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+    
+                    ";
+                    }
+                ?>
 			</div>
 <!--            Samsung-->
 			<div class="thumbnail panel panel-default  col-md-12 col-xs-12 col-sm-12" >
@@ -291,53 +254,36 @@
 							</a>
 						</div>
 						<div  class="navbar-header navbar-right" >
-							<a  href="iphone.php">
+							<a  href="samsung.php?model=iphone">
 								<button class="btn btn-default navbar-btn " >more</button>
 							</a>
 						</div>
 					</div>
 				</nav>
-				<div class="panel-default col-md-2 col-sm-2 col-sm-2" id="show">
-					<div class="thumbnail">
-						<img src="img\ip6s.jpg" alt="...">
-						<div class="caption">
-							
-							<p>Iphone 6s 16g</p>
+                    <?php
+                    require_once('dbconf.php');
+                    //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
+                    $sql="select id,namee,photo from network where brand like'$model' limit 4";
+                    $result = $conn->query($sql);
 
-						</div>
-					</div>
-				</div>
+                    while ($row = mysqli_fetch_object($result)) {
+                        echo"
+                                
+                                    <a href='detail.php?id=$row->id' >
+                                       <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
+                        <div class=\"thumbnail\">
+                            <img src=\"img/".$row->photo."\" alt=\"...\">
+                            <div class=\"caption\">
+                                
+                                $row->namee
+    
+                                </div>
+                            </div>
+                        </div></a>
+                            ";
+                    }
 
-				<div class="panel-default col-md-2 col-sm-2 col-sm-2" id="show">
-					<div class="thumbnail">
-						<img src="img\ip6sp.jpg" alt="...">
-						<div class="caption">
-							
-							<p>Iphone 6s+ 16g</p>
-
-						</div>
-					</div>
-				</div>
-				<div class="panel-default col-md-2 col-sm-2 col-sm-2" id="show">
-					<div class="thumbnail">
-						<img src="img\ip7.png" alt="...">
-						<div class="caption">
-							
-							<p>Iphone7</p>
-
-						</div>
-					</div>
-				</div>
-				<div class="panel-default col-md-2 col-sm-2 col-sm-2" id="show">
-					<div class="thumbnail">
-						<img src="img\ip7p.jpg" alt="...">
-						<div class="caption">
-							
-							<p>Iphone 7+</p>
-						</div>
-					</div>
-				</div>
-				
+                    ?>
 
 			</div>
 			<div class="thumbnail panel panel-default col-md-12 col-xs-12 col-sm-12" >
@@ -349,53 +295,36 @@
 							</a>
 						</div>
 						<div  class="navbar-header navbar-right" >
-							<a  href="oppo.php">
+							<a  href="samsung.php?model=oppo">
 								<button class="btn btn-default navbar-btn " >more</button>
 							</a>
 						</div>
 					</div>
 				</nav>
-				<div class="panel-default col-md-2 col-sm-2 col-sm-2" id="show">
-					<div class="thumbnail">
-						<img src="img\oppof1p.jpg" alt="...">
-						<div class="caption">
-							
-							<p>oppo F1 Plus</p>
+                    <?php
+                    require_once('dbconf.php');
+                    //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
+                    $sql="select id,namee,photo from network where brand like'$model' limit 4";
+                    $result = $conn->query($sql);
 
-						</div>
-					</div>
-				</div>
+                    while ($row = mysqli_fetch_object($result)) {
+                        echo"
+                                    
+                                        <a href='detail.php?id=$row->id' >
+                                           <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
+                            <div class=\"thumbnail\">
+                                <img src=\"img/".$row->photo."\" alt=\"...\">
+                                <div class=\"caption\">
+                                    
+                                    $row->namee
+        
+                                    </div>
+                                </div>
+                            </div></a>
+                                ";
+                    }
 
-				<div class="panel-default col-md-2 col-sm-2 col-sm-2" id="show">
-					<div class="thumbnail">
-						<img src="img\f1s.jpg" alt="...">
-						<div class="caption">
-							
-							<p>oppo F1s</p>
-
-						</div>
-					</div>
-				</div>
-				<div class="panel-default col-md-2 col-sm-2 col-sm-2" id="show">
-					<div class="thumbnail">
-						<img src="img\oppoA39.png" alt="...">
-						<div class="caption">
-							
-							<p>oppo A39</p>
-
-						</div>
-					</div>
-				</div>
-				<div class="panel-default col-md-2 col-sm-2 col-sm-2" id="show">
-					<div class="thumbnail">
-						<img src="img\neo7.jpg" alt="...">
-						<div class="caption">
-							
-							<p>oppo Neo 7</p>
-						</div>
-					</div>
-				</div>
-				
+                    ?>
 
 			</div>
 			<div class="thumbnail panel panel-default  col-md-12 col-xs-12 col-sm-12" >
@@ -407,52 +336,36 @@
 							</a>
 						</div>
 						<div  class="navbar-header navbar-right" >
-							<a  href="sugar.php">
+							<a  href="samsung.php?model=sugar">
 								<button class="btn btn-default navbar-btn " >more</button>
 							</a>
 						</div>
 					</div>
 				</nav>
-				<div class="panel-default col-md-2 col-sm-2 col-sm-2" id="show">
-					<div class="thumbnail">
-						<img src="img\sugarf7mini.jpg" alt="...">
-						<div class="caption">
-							
-							<p>Sugar F7mini</p>
+                        <?php
+                        require_once('dbconf.php');
+                        //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
+                        $sql="select id,namee,photo from network where brand like'$model'";
+                        $result = $conn->query($sql);
 
-						</div>
-					</div>
-				</div>
+                        while ($row = mysqli_fetch_object($result)) {
+                            echo"
+                                        
+                                            <a href='detail.php?id=$row->id' >
+                                               <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
+                                <div class=\"thumbnail\">
+                                    <img src=\"img/".$row->photo."\" alt=\"...\">
+                                    <div class=\"caption\">
+                                        
+                                        $row->namee
+            
+                                        </div>
+                                    </div>
+                                </div></a>
+                                    ";
+                        }
 
-				<div class="panel-default col-md-2 col-sm-2 col-sm-2" id="show">
-					<div class="thumbnail">
-						<img src="img\sugarf7.jpg" alt="...">
-						<div class="caption">
-							
-							<p>Sugar F7</p>
-
-						</div>
-					</div>
-				</div>
-				<div class="panel-default col-md-2 col-sm-2 col-sm-2" id="show">
-					<div class="thumbnail">
-						<img src="img\sugarc6.jpg" alt="...">
-						<div class="caption">
-							
-							<p>Sugar C6</p>
-
-						</div>
-					</div>
-				</div>
-				<div class="panel-default col-md-2 col-sm-2 col-sm-2" id="show">
-					<div class="thumbnail">
-						<img src="img\sugar2.jpg" alt="...">
-						<div class="caption">
-							
-							<p>Sugar 2</p>
-						</div>
-					</div>
-				</div>
+                        ?>
             </div>
         </div>
         <div class="panel col-md-2 col-xs-2" style="background-color: #f0f0f5">
