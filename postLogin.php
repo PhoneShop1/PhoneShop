@@ -1,45 +1,21 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: KONG KEA
- * Date: 6/15/2017
- * Time: 5:53 PM
- */
-if(isset($_POST['first_Name']) && $_POST['passWord']!= ''){
-    $first_Name = $_POST['first_Name'];
-    $passWord = $_POST['passWord'];
+require_once('config/db.php');
 
-    //Check user in database
-    $hostname = 'localhost';
-    $usernameDB = 'root';
-    $passwordDB = '';
-    $dbname = 'phoneshop';
-    //Create connection to mysql database
-    $conn = new mysqli($hostname, $usernameDB, $passwordDB, $dbname);
-
-    if($conn->connect_error){
-        die('Fail to connect to mysql database');
-    }
-
-    require_once('salt.php');
-    $passWord = crypt($passWord, KEY_SALT);
-
-    $sql = "select * from accounts where first_Name = '$first_Name' and passWord='$passWord'";
+if(isset($_POST['username']) && $_POST['username']!= ''){
+    echo $password;
+    $password = $_POST['password'];
+    $username =$_POST['username'];
+    $sql = "select * from userlogin where username = '$username' and password='$password'";
     $result = $conn->query($sql);
-
+    echo $result->num_rows;
+    // echo $username;
     if($result->num_rows > 0){
-
         session_start();
-        $_SESSION['first_name'] = $first_Name;
-        if($_POST['rememberMe'] == 'r'){
-            setcookie('username', $first_name, time()+60*60*24);
-        }
+        $_SESSION['username'] = $username;
         header('Location: index.php');
     }else{
-        echo "Wrong first_Name or password";
+        echo "Wrong username or password";
     }
 }else{
-//    header('Location: login.php');
-    echo"no";
+    header('Location: index.php');
 }
-?>

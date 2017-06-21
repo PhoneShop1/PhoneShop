@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>Heng Lay Phone Shop</title>
 	<link rel="stylesheet" type="text/css" href="Public/vendors/bootstrap/css/bootstrap.min.css">
 	<meta content="width=device-width,initial-scale=1" name="viewpoet">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
@@ -59,10 +63,10 @@
                                         <div class="row">
                                             <div class="col-xs-6">
                                                 <div class="well">
-                                                    <form id="loginForm" method="POST" action="postLogin.php" novalidate="novalidate">
+                                                    <form role="form" id="loginForm" method="POST" action="postLogin.php" novalidate="novalidate">
                                                         <div class="form-group">
                                                             <label for="username" class="control-label">Username</label>
-                                                            <input type="text" class="form-control" id="username" name="first_Name" value="" required="" title="Please enter you username" placeholder="example@gmail.com">
+                                                            <input type="text" class="form-control" id="username" name="first_Name" value="" required="" title="Please enter you username" placeholder="Username">
                                                             <span class="help-block"></span>
                                                         </div>
                                                         <div class="form-group">
@@ -92,7 +96,7 @@
                                                     <li><span class="fa fa-check text-success"></span> Get a gift <small>(only new customers)</small></li>
                                                     <li><a href="/read-more/"><u>Read more</u></a></li>
                                                 </ul>
-                                                <p><a href="SignUp.php" class="btn btn-info btn-block">Yes please, register now!</a></p>
+                                                <p><a href="register.php" class="btn btn-info btn-block">Yes please, register now!</a></p>
                                             </div>
                                         </div>
                                     </div>
