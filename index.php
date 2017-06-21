@@ -158,12 +158,12 @@
 		<div class="panel col-md-2 col-xs-2" style="background-color: #f0f0f5">
             <div class="list-group">
                 <a href="#" class="list-group-item active">
-                    Cras justo odio
+                   Mobile Phone
                 </a>
-                <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-                <a href="#" class="list-group-item">Morbi leo risus</a>
-                <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-                <a href="#" class="list-group-item">Vestibulum at eros</a>
+                <a href="samsung.php?model=Huawei" class="list-group-item">Huawei</a>
+                <a href="samsung.php?model=Samsung" class="list-group-item">Samsung</a>
+                <a href="samsung.php?model=iphone" class="list-group-item">iphone</a>
+                <a href="samsung.php?model=oppo" class="list-group-item">oppo</a>
             </div>
 		</div>
         <div class="thumbnail panel panel-default  col-md-8 col-xs-8 col-sm-8" >
@@ -184,7 +184,7 @@
                         <?php
                         require_once('dbconf.php');
 //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
-                        $sql="select id,namee,photo from network where brand like'Huawei'";
+                        $sql="select id,namee,photo from network where brand like'Huawei' limit 4";
                         $result = $conn->query($sql);
 
                             while ($row = mysqli_fetch_object($result)) {
@@ -372,16 +372,16 @@
         <div class="panel col-md-2 col-xs-2" style="background-color: #f0f0f5">
             <div class="list-group">
                 <a href="#" class="list-group-item active">
-                    Cras justo odio
+                    Accessories
                 </a>
-                <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+                <a href="accessoriesDetail.php?model=Camera" class="list-group-item">Action Camera</a>
                 <a href="#" class="list-group-item">Morbi leo risus</a>
                 <a href="#" class="list-group-item">Porta ac consectetur ac</a>
                 <a href="#" class="list-group-item">Vestibulum at eros</a>
             </div>
         </div>
         </div>
-
+    <a href="Accessories.php"><button>add</button></a>
 
 	</body>
 	</html>
