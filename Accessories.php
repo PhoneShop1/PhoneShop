@@ -15,10 +15,10 @@ if (isset($_POST['upload'])) {
     $Status=$_POST['Status'];
     $Remark=$_POST['Remark'];
 
+
     $sql = "insert into accessories (photo,namee,price,Brand,Memory,SIM,Warr,Color,Status,Remark) 
 values ('$photo','$namey','$price','$Brand','$Memory','$SIM','$Warran','$Color','$Status','$Remark')";
-echo $sql;
-    mysqli_query($db, $sql);
+//    mysqli_query($db, $sql);
         if (move_uploaded_file($_FILES['images']['tmp_name'], $target)) {
             $msg = "Image Uploaded Successfully";
         } else {
@@ -30,6 +30,7 @@ echo $sql;
         }else{
             echo "Fail to create new word";
         }
+        header('Location: index.php');
 }
 ?>
 

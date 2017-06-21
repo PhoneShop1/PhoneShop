@@ -69,25 +69,21 @@
 <div class="container col-md-11  col-sm-11 col-xs-11 " id="container" >
     <div class="col-md-12  ">
         <div class="thumbnail panel panel-default  col-md-8 col-md-offset-2 col-xs-8 col-sm-8" >
-            <div class="col-md-12" >
-                <form action="Network.php" >
-                    <button type="network">Add</button>
-                </form>
-            </div>
+<!--            <div class="col-md-12" >-->
+<!--                <form action="Network.php" >-->
+<!--                    <button type="network">Add</button>-->
+<!--                </form>-->
+<!--            </div>-->
                            <?php
                            $id=$_GET['id'];
-
-//                        require_once ('dbconf.php');
-//                        $sql="select * from network where id=(select max(network.id) from network)";
-//                        $result = $conn->query($sql);
-//                        $count=$result->num_rows;
                            $db = mysqli_connect("localhost","root","","phoneshop");
                            $sql = "select * from network where id='$id'";
+//                           $sql="select *from accessories WHEN id='$id'";
                            $result = mysqli_query($db,$sql);
                            while ($row = mysqli_fetch_object($result)) {
                                echo "
             
-                <div id=\"$row->id\" class=\"flex-item-2\">
+             <!--   <div id=\"$row->id\" class=\"flex-item-2\">
                     <div class='col-md-12  col-sm-12'>
                         <div  class='col-md-1 col-md-offset-5' method=\"request\">
                             <a href=\"delete.php\" onClick=\"return confirm('Are you sure you want to delete?')\"><button>Delete
@@ -101,7 +97,7 @@
                             </button></a>
 						
                     </div>
-                </div>
+                </div> -->
                 <!-- Modal -->
             
                                             <div class='col-md-12'>
@@ -110,7 +106,7 @@
                                                     
                                                         <div class='col-md-6'>
                                                             
-                                                            <img style='width: 80%;margin-top: 5%;margin-left: 10%;background-color: #c8ffff' class='panel panel-default' src='images/".$row->photo."'>
+                                                            <img style='width: 80%;margin-top: 5%;margin-left: 10%;background-color: #c8ffff' class='panel panel-default' src='img/".$row->photo."'>
                                                         </div>
                                                         <div class='col-md-6'>
                                                             <div class='col-md-12'>
@@ -205,6 +201,59 @@
                                          ";
                            }
                            ?>
+
+            <?php
+            $id=$_GET['id'];
+            $db = mysqli_connect("localhost","root","","phoneshop");
+            $sql="select *from accessories where id='$id'";
+            $result = mysqli_query($db,$sql);
+            while ($row = mysqli_fetch_object($result)) {
+                echo "
+                    <div id=\"$row->id\" class=\"flex - item - 2\">
+                            <div class='col-md-12  col-sm-12'>
+                                <div  class='col-md-1 col-md-offset-5' method=\"request\">
+                                    <a href=\"delete.php\" onClick=\"return confirm('Are you sure you want to delete?')\"><button>Delete
+                                        </button>
+                                    </a>
+                                </div>
+                                
+                                    <a href='edit.php?id=$row->id'>
+                                    <button  type='button'  data-toggle='modal' data-target='#up-$row->id'>
+                                        Edit
+                                    </button></a>
+                                
+                            </div>
+                    </div>
+                    <div class='col-md-12'>
+                        <div class='col-md-6'>
+                            <img style='width: 80%;margin-top: 5%;margin-left: 10%;background-color: #c8ffff' class='panel panel-default' src='img/".$row->photo."'>
+                         </div>
+                        <div class='col-md-6'>
+                            <div class='col-md-12'>
+                                <div class='col-md-12'>
+                                    <div class='col-md-12'>
+                                        <div class='col-md-12'><h2>$row->namee</h2></td>
+                                        <div class='col-md-12'><h2>Price: <b style='color: red'>$row->price</b></h2></div>
+                                    </div>
+                                        <div class='col-md-12'>
+                                            <table class=' table table-bordered'>
+                                                <tr><td style='width: 60%'>Brand</td><td>$row->Brand</td></tr>
+                                                <tr><td>Internal Memory</td><td>$row->Memory</td></tr>
+                                                <tr><td>SIM</td><td>$row->SIM</td></tr>
+                                                <tr><td>Warranty</td><td>$row->Warr</td></tr>
+                                                <tr><td>Color</td><td>$row->Color</td></tr>
+                                                <tr><td>Status</td><td>$row->Status</td></tr>
+                                                <tr><td>Remark</td><td>$row->Remark</td></tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    ";
+            }
+            ?>
 
             </div>
         </div>
