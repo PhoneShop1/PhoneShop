@@ -1,14 +1,6 @@
 <?php
 require_once ('config/db.php');
-if(isset($_POST['username']) && $_POST['username']!= ''){
-    $username = $_POST['username'];
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $sex = $_POST['sex'];
-    $photo = '';
-
+if(isset($_FILES['photo'])){
     if(isset($_FILES['photo'])){
         $uploadDir = "upload/";
         $fileTmpName = $_FILES['photo']['tmp_name'];
@@ -32,17 +24,18 @@ if(isset($_POST['username']) && $_POST['username']!= ''){
             echo "File is bigger thant 5M - file size is ".number_format($fileSize/1024/1024, 2)."MB";
         }
     }
-
-    // $password = crypt($password, KEY_SALT);
-
-    $sql = "insert into userlogin (username,first_name, last_name, email, password, sex,photo) values ('$username','$firstname','$lastname', '$email', '$password', '$sex', '$photo')";
-    echo "$sql";
-    $result = $conn->query($sql);
-    if($result){
-        header('Location: index.php');
-    }else{
-        header('Location: register.php');
+    //Remove old file
+    $userId = $_POST['userId'];
+    $sql1 = "select * from userlogin where id = $userId";
+    $result = $conn->query($sql1);
+    while ($row = $result->fetch_obje()){
+        //Remove old profile photo
+        unlink($row->photo);
     }
-}else{
-    header('Location: index.php');
+
+    $sql2 = "update userlogin set photo='$photo' where id=$userId";
+    $result = $conn->query($sql2);
+    if($result){
+        echo "Profile photo is update";
+    }
 }
