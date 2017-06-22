@@ -69,30 +69,8 @@
 		</div>
 	</div>
 	<div class="container col-md-11  col-sm-11 col-xs-11 " id="container">
-		<div class="panel col-md-2 col-xs-2" >
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title" id="menu">Phones</h3>
-				</div>
-				<div class="panel-body">
-					Samsung
-				</div>
-				<div class="panel-body">
-					Huawei
-				</div>
-				<div class="panel-body">
-					Oppo
-				</div>
-				<div class="panel-body">
-					Sugar
-				</div>
-				<div class="panel-body">
-					Iphone
-				</div>
-			</div>
-		</div>
-		
-			<div class="thumbnail panel panel-default  col-md-8 col-xs-8 col-sm-8" >
+
+			<div class="thumbnail panel panel-default  col-md-8 col-md-offset-2 col-xs-8 col-sm-8" >
 				<nav class="navbar navbar-default" id="pageheader">
 					<div class="container-fluid">
 						<div class="navbar-header">
@@ -129,24 +107,6 @@
 
 
 			</div>
-			<div class="panel col-md-2 col-xs-2 col-sm-2" >
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title" id="menu">Accessories</h3>
-					</div>
-					<div class="panel-body">
-						Panel content
-					</div>
-					<div class="panel-body">
-						Panel content
-					</div>
-					<div class="panel-body">
-						Panel content
-					</div>
-					<div class="panel-body">
-						Panel content
-					</div>
-				</div>
-			</div>
+    </div>
 </body>
 </html>
