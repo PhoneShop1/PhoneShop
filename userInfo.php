@@ -15,8 +15,8 @@
         <th>Photo</th>
     </tr>
 <?php
-    require_once ("config/db.php");
-    $sql = "select * from users where id =1";
+    require_once ("config/dbconf.php");
+    $sql = "select * from userlogin where id =1";
     $result = $conn->query($sql);
     while ($row = $result->fetch_object()){
         ?>
