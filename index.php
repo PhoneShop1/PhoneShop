@@ -57,8 +57,6 @@
                         }
                     ?>
                 </div>
-
-                
                 </a>
 				<ul class="nav navbar-nav navbar-right">
 <!--                    <p><a href="LogOut.php" class="btn btn-info btn-block" id="myBtn">Log Out</a></p>-->
