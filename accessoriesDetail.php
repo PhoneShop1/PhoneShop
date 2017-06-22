@@ -178,7 +178,7 @@
                               <div class=\"panel -default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
                                     <div class=\"thumbnail\">
                                         <img src=\"img/".$row->photo."\" alt = \"...\" >
-                                        <div class=\"caption\" >
+                                        <div class=\"caption\" style='text-align: center'>
                                             $row->namee
             
                                         </div >
