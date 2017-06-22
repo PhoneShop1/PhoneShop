@@ -72,7 +72,7 @@ if (isset($_POST['upload'])) {
     '$jack','$WLAN','$Bluetooth','$GPS','$NFC','$Radio','$USB','$Sensors','$Messaging',
     '$Brower','$Java','$Colors','$Battery','$namey','$price','$brand','$memory','$sime',
     '$warr','$colord','$statuss','$remark','$photo')";
-echo $sql;
+//echo $sql;
     mysqli_query($db, $sql);
 
     if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
@@ -86,28 +86,27 @@ echo $sql;
     }else{
         echo "Fail to create new word";
     }
-//    header('Location: detail.php');
+    header('Location: detail.php');
 }
 ?>
 <html>
 <head>
     <title>Image Upload</title>
     <link rel="stylesheet" type="text/css" href="css/style_s.css">
+    <link rel="stylesheet" type="text/css" href="Public/vendors/bootstrap/css/bootstrap.min.css">
+    <meta content="width=device-width,initial-scale=1" name="viewpoet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="phoneshop.css">
+    <script src="phoneshop.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-
-<!--//    $db = mysqli_connect("localhost","root","","phoneshop");-->
-<!--//    $sql = "SELECT * FROM pcphoto";-->
-<!--//    $result = mysqli_query($db,$sql);-->
-<!--//    while ($row = mysqli_fetch_array($result)) {-->
-<!--//        echo "<div id='img_div'>";-->
-<!--//        echo "<img src='images/".$row['photo']."'>";-->
-<!--//        echo "<p>".$row['title']."</p>";-->
-<!--//        echo "<p>".$row['description']."</p>";-->
-<!--//        echo "</div>";-->
-<!--//    }-->
-
 
         <form action="Network.php" method="post" enctype="multipart/form-data">
             <input type="hidden"  name="size" value="1000000" />
