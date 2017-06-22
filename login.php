@@ -1,19 +1,32 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login Page</title>
-</head>
-<body>
-    <form role="form" name="loginForm" action="postLogin.php" method="post">
-        <input type="text" name="username" placeholder="Username">
-        <input type="password" name="password" placeholder="Password">
-        <button type="submit">Login</button>
+<?php
+//define('KEY_SALT','34353dfjjdfdh');
+include ("dbconf.php");
+$op = $_GET['op'];
+if ($op == $_GET['op']){
+    $usern = $_POST['username'];
+    $pass = $_POST['password'];
+    $pass = crypt($_POST['password'], KEY_SALT);
+    $query = mysqli_query($conn,"SELECT * FROM userlogin username = '$usern' AND password = '$pass'");
+    if (mysqli_num_rows($query,$usern,$pass)==0){
+        session_start();
+        echo "<script language=\"JavaScript\">
+                alert(\" you are successful to login!\");
+                document.location=\"index.php?name=".$usern."\";
+              </script>";
+        $_SESSION['username'] = $usern;
+        $_SESSION['password'] = $pass;
+        if (isset($_POST['check'])) {
+            setcookie('username',$usern, time()+60*60*24);
 
-    </form>
-    <a href="register.php">Register New Account</a>
-</body>
-</html>
+        }
+    }else{
+        echo "<script language=\"JavaScript\">
+                alert(\"sorry username or password is incorrect!\");
+                document.location=\"index.php\";
+              </script>";
+    }
+}
+?>
+<script></script>
+
+

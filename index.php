@@ -43,14 +43,30 @@
 					</div>
 					<button type="submit" class="btn btn-default">Search</button>
 				</form>
+                <div>
+                    <?php
+                        session_start();
 
+                        if(isset($_COOKIE['username'])){
+                            echo $_COOKIE['username'];
+                        }
+                        if(isset($_SESSION['username'])){
+                            echo $_GET['name'];
+                        }else{
+                            echo "";
+                        }
+                    ?>
+                </div>
+
+                
+                </a>
 				<ul class="nav navbar-nav navbar-right">
 <!--                    <p><a href="LogOut.php" class="btn btn-info btn-block" id="myBtn">Log Out</a></p>-->
 					<li class="dropdown">
 <!--                        <button type="button" class="btn btn-default btn-lg"><a href="LogOut.php">log out</a></button>-->
 
                         <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button>
-                        <button type="button" class="btn btn-default " id="log_out">Log out</button>
+                        <a href="logout.php"> <button type="button" class="btn btn-default ">Log out</button></a>
                         <!-- Modal -->
                         <div class="modal fade" id="myModal" role="dialog">
                             <div id="login-overlay" class="modal-dialog">
@@ -63,15 +79,15 @@
                                         <div class="row">
                                             <div class="col-xs-6">
                                                 <div class="well">
-                                                    <form role="form" id="loginForm" method="POST" action="postLogin.php" novalidate="novalidate">
+                                                    <form role="form" id="loginForm" method="POST" action="login.php?op=in" novalidate="novalidate">
                                                         <div class="form-group">
                                                             <label for="username" class="control-label">Username</label>
-                                                            <input type="text" class="form-control" id="username" name="first_Name" value="" required="" title="Please enter you username" placeholder="Username">
+                                                            <input type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="Username">
                                                             <span class="help-block"></span>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="password" class="control-label">Password</label>
-                                                            <input type="password" class="form-control" id="password" name="passWord" value="" required="" title="Please enter your password">
+                                                            <input type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password">
                                                             <span class="help-block"></span>
                                                         </div>
                                                         <div id="loginErrorMsg" class="alert alert-error hide">Wrong username og password</div>
