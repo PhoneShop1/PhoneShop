@@ -1,4 +1,14 @@
-
+<?php
+session_start();
+if(!isset($_SESSION['username'])){
+    header('Location: admin_login.php');
+}
+?>
+<?php
+if(isset($_POST['newnote'])){
+    header('Location: admin_index.php');
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -53,8 +63,8 @@
                     <li class="dropdown">
                         <!--                        <button type="button" class="btn btn-default btn-lg"><a href="LogOut.php">log out</a></button>-->
 
-                        <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button>
-                        <button type="button" class="btn btn-default " id="log_out">Log out</button>
+<!--                        <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button>-->
+                        <a href="admin_logout.php"><button type="button" class="btn btn-default " id="log_out">Log out</button></a>
                         <!-- Modal -->
                         <div class="modal fade" id="myModal" role="dialog">
                             <div id="login-overlay" class="modal-dialog">
@@ -279,12 +289,12 @@
             <table>
                 <?php
                 $db = mysqli_connect("localhost","root","","phoneshop");
-                $sql="select * from network ";
+                $sql="select * from network order by id DESC ";
                 $result = mysqli_query($db,$sql);
                 while ($row = mysqli_fetch_object($result)) {
                     echo "
                         <div style='border: 1px solid;height: 50px;' class='col-md-8 col-md-offset-1' >
-                            <div class='col-md-8' style='margin-top: 2%;'>$row->namee</div>
+                            <div class='col-md-6' style='margin-top: 2%;'>$row->namee</div>
                             <a href='edit.php?id=$row->id'><div class='col-md-2' style='margin-top: 2%'><button>edit</button></div></a> 
                             <a href='delete.php?id=$row->id'><div class='col-md-2' style='margin-top: 2%'> <button>delete</button></div></a>                            
                             <a href='detail.php?id=$row->id'><div class='col-md-2' style='margin-top: 2%'> <button>detail</button></div></a>                            
@@ -298,7 +308,7 @@
             <table>
                 <?php
                 $db = mysqli_connect("localhost","root","","phoneshop");
-                $sql="select * from accessories ";
+                $sql="select * from accessories order by id DESC";
                 $result = mysqli_query($db,$sql);
                 while ($row = mysqli_fetch_object($result)) {
 
@@ -306,7 +316,7 @@
                         <div style='border: 1px solid;height: 50px' class='col-md-8 col-md-offset-1'>
                             <div class='col-md-12'>
                                 <div class='col-md-6' style='margin-top: 2%;'>$row->namee</div>
-                                <a href='edit.php?id=$row->id'><div class='col-md-2' style='margin-top: 2%'><button>edit</button></div></a> 
+                                <a href='edit_access.php?id=$row->id'><div class='col-md-2' style='margin-top: 2%'><button>edit</button></div></a> 
                                 <a href='delete.php?id=$row->id'><div class='col-md-2' style='margin-top: 2%'> <button>delete</button></div></a>
                                 <a href='detail.php?id=$row->id'><div class='col-md-2' style='margin-top: 2%'> <button>detail</button></div></a>                                                        
                             </div>
@@ -320,14 +330,14 @@
             <table>
                 <?php
                 $db = mysqli_connect("localhost","root","","phoneshop");
-                $sql="select * from userlogin ";
+                $sql="select * from userlogin order by userId DESC";
                 $result = mysqli_query($db,$sql);
                 while ($row = mysqli_fetch_object($result)) {
 
                     echo "
                         <div style='border: 1px solid;height: 50px' class='col-md-8 col-md-offset-1'>
                             <div class='col-md-6' style='margin-top: 2%;'>Username: <b style='color: blue'> $row->username</b></div>
-                            <a href='edit.php?id=$row->userId'><div class='col-md-2' style='margin-top: 2%'><button>edit</button></div></a> 
+                            <a href='edit_user.php?id=$row->userId'><div class='col-md-2' style='margin-top: 2%'><button>edit</button></div></a> 
                             <a href='delete.php?id=$row->userId'><div class='col-md-2' style='margin-top: 2%'> <button>delete</button></div></a>
                             <a href='delete.php?id=$row->userId'><div class='col-md-2' style='margin-top: 2%'> <button>delete</button></div></a>                            
 
