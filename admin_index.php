@@ -289,12 +289,12 @@ if(isset($_POST['newnote'])){
             <table>
                 <?php
                 $db = mysqli_connect("localhost","root","","phoneshop");
-                $sql="select * from network ";
+                $sql="select * from network order by id DESC ";
                 $result = mysqli_query($db,$sql);
                 while ($row = mysqli_fetch_object($result)) {
                     echo "
                         <div style='border: 1px solid;height: 50px;' class='col-md-8 col-md-offset-1' >
-                            <div class='col-md-8' style='margin-top: 2%;'>$row->namee</div>
+                            <div class='col-md-6' style='margin-top: 2%;'>$row->namee</div>
                             <a href='edit.php?id=$row->id'><div class='col-md-2' style='margin-top: 2%'><button>edit</button></div></a> 
                             <a href='delete.php?id=$row->id'><div class='col-md-2' style='margin-top: 2%'> <button>delete</button></div></a>                            
                             <a href='detail.php?id=$row->id'><div class='col-md-2' style='margin-top: 2%'> <button>detail</button></div></a>                            
@@ -308,7 +308,7 @@ if(isset($_POST['newnote'])){
             <table>
                 <?php
                 $db = mysqli_connect("localhost","root","","phoneshop");
-                $sql="select * from accessories ";
+                $sql="select * from accessories order by id DESC";
                 $result = mysqli_query($db,$sql);
                 while ($row = mysqli_fetch_object($result)) {
 
@@ -316,7 +316,7 @@ if(isset($_POST['newnote'])){
                         <div style='border: 1px solid;height: 50px' class='col-md-8 col-md-offset-1'>
                             <div class='col-md-12'>
                                 <div class='col-md-6' style='margin-top: 2%;'>$row->namee</div>
-                                <a href='edit.php?id=$row->id'><div class='col-md-2' style='margin-top: 2%'><button>edit</button></div></a> 
+                                <a href='edit_access.php?id=$row->id'><div class='col-md-2' style='margin-top: 2%'><button>edit</button></div></a> 
                                 <a href='delete.php?id=$row->id'><div class='col-md-2' style='margin-top: 2%'> <button>delete</button></div></a>
                                 <a href='detail.php?id=$row->id'><div class='col-md-2' style='margin-top: 2%'> <button>detail</button></div></a>                                                        
                             </div>
@@ -330,14 +330,14 @@ if(isset($_POST['newnote'])){
             <table>
                 <?php
                 $db = mysqli_connect("localhost","root","","phoneshop");
-                $sql="select * from userlogin ";
+                $sql="select * from userlogin order by userId DESC";
                 $result = mysqli_query($db,$sql);
                 while ($row = mysqli_fetch_object($result)) {
 
                     echo "
                         <div style='border: 1px solid;height: 50px' class='col-md-8 col-md-offset-1'>
                             <div class='col-md-6' style='margin-top: 2%;'>Username: <b style='color: blue'> $row->username</b></div>
-                            <a href='edit.php?id=$row->userId'><div class='col-md-2' style='margin-top: 2%'><button>edit</button></div></a> 
+                            <a href='edit_user.php?id=$row->userId'><div class='col-md-2' style='margin-top: 2%'><button>edit</button></div></a> 
                             <a href='delete.php?id=$row->userId'><div class='col-md-2' style='margin-top: 2%'> <button>delete</button></div></a>
                             <a href='delete.php?id=$row->userId'><div class='col-md-2' style='margin-top: 2%'> <button>delete</button></div></a>                            
 
