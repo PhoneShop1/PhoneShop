@@ -428,17 +428,16 @@
                         while ($row = mysqli_fetch_object($result)) {
                             echo"
                                         
-                                            <a href='detail.php?id=$row->id' >
-                                               <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
+                            <a href='detail.php?id=$row->id' >
+                            <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
                                 <div class=\"thumbnail\">
                                     <img src=\"img/".$row->photo."\" alt=\"...\">
                                     <div class=\"caption\">
                                         
                                         $row->namee
-            
-                                        </div>
-                                    </div>
-                                </div></a>
+                                     </div>
+                                 </div>
+                             </div></a>
                                     ";
                         }
 
@@ -456,8 +455,8 @@
                 <a href="#" class="list-group-item">Vestibulum at eros</a>
             </div>
         </div>
-        </div>
-    <a href="Accessories.php"><button>add</button></a>
+    </div>
+        <a href="Network.php"><button>add</button></a>
 
 	</body>
 	</html>
