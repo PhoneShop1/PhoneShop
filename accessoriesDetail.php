@@ -170,7 +170,7 @@
         <?php
         $model=$_GET['model'];
         $db = mysqli_connect("localhost","root","","phoneshop");
-        $sql="select * from accessories where Brand like '%$model' ";
+        $sql="select * from accessories where Brand like '%$model%' ";
         $result = mysqli_query($db,$sql);
             while ($row = mysqli_fetch_object($result)) {
                 echo "
@@ -190,20 +190,20 @@
             ";
             }
         ?>
+
     </div>
     <div class="panel col-md-2 col-xs-2" style="background-color: #f0f0f5">
         <div class="list-group">
             <a href="#" class="list-group-item active">
                 Accessories
             </a>
-            <a href="#" class="list-group-item">Action Camera</a>
-            <a href="#" class="list-group-item">Morbi leo risus</a>
-            <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-            <a href="#" class="list-group-item">Vestibulum at eros</a>
+            <a href="accessoriesDetail.php?model=Camera" class="list-group-item">Action Camera</a>
+            <a href="accessoriesDetail.php?model=Bluetooth" class="list-group-item">Bluetooth HeadSet</a>
+            <a href="accessoriesDetail.php?model=Bottle" class="list-group-item">Bottle</a>
+            <a href="accessoriesDetail.php?model=Charger" class="list-group-item">Charger</a>
         </div>
     </div>
 </div>
-<a href="Accessories.php"><button>add</button></a>
 
 </body>
 </html>
