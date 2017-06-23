@@ -21,7 +21,7 @@
 
 </head>
 <body style="background-color: #f0f0f5;">
-	<nav class="navbar navbar-default" style="background-color: #b3e0ff;">
+	<nav class="navbar navbar-default navbar-fixed-top" style="background-color: #b3e0ff;">
 		<div class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
@@ -46,7 +46,7 @@
 					</div>
 					<button type="submit" class="btn btn-default">Search</button>
 				</form>
-                <div>
+                <div class="nav navbar-nav navbar-right">
                     <?php
                         session_start();
 
@@ -55,11 +55,14 @@
                         }
                         if(isset($_SESSION['username'])){
                             echo $_GET['name'];
+
                         }else{
+
                             echo "";
                         }
                     ?>
                 </div>
+
                 </a>
 				<ul class="nav navbar-nav navbar-right">
 <!--                    <p><a href="LogOut.php" class="btn btn-info btn-block" id="myBtn">Log Out</a></p>-->
@@ -134,7 +137,7 @@
 		</div><!-- /.container-fluid -->
 	</nav>
 
-    <div id="carousel-example-generic" class="carousel slide col-md-12" data-ride="carousel" style="background: none;">
+    <div id="carousel-example-generic" class="carousel slide col-md-12" data-ride="carousel" style="background: none; margin-top: 50px;">
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -176,7 +179,7 @@
         </a>
     </div>
     <div class="container col-md-12 col-xs-12 col-sm-12">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default col-md-8 col-md-offset-2">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -186,16 +189,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Brand</a>
+
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Link</a></li>
+
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mobile Phones <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Action</a></li>
                             <li><a href="#">Another action</a></li>
@@ -207,16 +209,10 @@
                         </ul>
                     </li>
                 </ul>
-                <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Link</a></li>
+
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accessories <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Action</a></li>
                             <li><a href="#">Another action</a></li>
