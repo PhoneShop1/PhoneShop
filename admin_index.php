@@ -1,4 +1,14 @@
-
+<?php
+session_start();
+if(!isset($_SESSION['username'])){
+    header('Location: admin_login.php');
+}
+?>
+<?php
+if(isset($_POST['newnote'])){
+    header('Location: admin_index.php');
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -53,8 +63,8 @@
                     <li class="dropdown">
                         <!--                        <button type="button" class="btn btn-default btn-lg"><a href="LogOut.php">log out</a></button>-->
 
-                        <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button>
-                        <button type="button" class="btn btn-default " id="log_out">Log out</button>
+<!--                        <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button>-->
+                        <a href="admin_logout.php"><button type="button" class="btn btn-default " id="log_out">Log out</button></a>
                         <!-- Modal -->
                         <div class="modal fade" id="myModal" role="dialog">
                             <div id="login-overlay" class="modal-dialog">
