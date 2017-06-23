@@ -134,7 +134,9 @@
             <a href="#input_form" class="list-group-item" id="addPhone">Add Phone</a>
             <a href="#input_acc" class="list-group-item" id="addAcc">Add Accessories</a>
             <a href="#list_phone" class="list-group-item" id="lst_phone">List Phone</a>
-            <a href="#" class="list-group-item">Vestibulum at eros</a>
+            <a href="#list_acc" class="list-group-item" id="lst_acc">List Accessories</a>
+            <a href="#list_cus" class="list-group-item" id="lst_cus">List Customer</a>
+
         </div>
     </div>
     <div class="col-md-9">
@@ -280,32 +282,101 @@
                 $sql="select * from network ";
                 $result = mysqli_query($db,$sql);
                 while ($row = mysqli_fetch_object($result)) {
-
                     echo "
-                        <div style='border: 1px solid;height: 50px' class='col-md-8 col-md-offset-1'>
-                            <div class='col-md-8'>$row->namee</div>
-                            <div class='col-md-4'><button>ass</button></div>
-                        </div>
-                           
+                        <div style='border: 1px solid;height: 50px;' class='col-md-8 col-md-offset-1' >
+                            <div class='col-md-8' style='margin-top: 2%;'>$row->namee</div>
+                            <a href='edit.php?id=$row->id'><div class='col-md-2' style='margin-top: 2%'><button>edit</button></div></a> 
+                            <a href='delete.php?id=$row->id'><div class='col-md-2' style='margin-top: 2%'> <button>delete</button></div></a>                            
+                            <a href='detail.php?id=$row->id'><div class='col-md-2' style='margin-top: 2%'> <button>detail</button></div></a>                            
+                        </div>           
                     ";
                 };
                 ?>
             </table>
         </div>
+        <div id="list_acc" style="display: none">
+            <table>
+                <?php
+                $db = mysqli_connect("localhost","root","","phoneshop");
+                $sql="select * from accessories ";
+                $result = mysqli_query($db,$sql);
+                while ($row = mysqli_fetch_object($result)) {
+
+                    echo "
+                        <div style='border: 1px solid;height: 50px' class='col-md-8 col-md-offset-1'>
+                            <div class='col-md-12'>
+                                <div class='col-md-6' style='margin-top: 2%;'>$row->namee</div>
+                                <a href='edit.php?id=$row->id'><div class='col-md-2' style='margin-top: 2%'><button>edit</button></div></a> 
+                                <a href='delete.php?id=$row->id'><div class='col-md-2' style='margin-top: 2%'> <button>delete</button></div></a>
+                                <a href='detail.php?id=$row->id'><div class='col-md-2' style='margin-top: 2%'> <button>detail</button></div></a>                                                        
+                            </div>
+                        </div>                     
+                    ";
+                };
+                ?>
+            </table>
+        </div>
+        <div id="list_cus" style="display: none">
+            <table>
+                <?php
+                $db = mysqli_connect("localhost","root","","phoneshop");
+                $sql="select * from userlogin ";
+                $result = mysqli_query($db,$sql);
+                while ($row = mysqli_fetch_object($result)) {
+
+                    echo "
+                        <div style='border: 1px solid;height: 50px' class='col-md-8 col-md-offset-1'>
+                            <div class='col-md-6' style='margin-top: 2%;'>Username: <b style='color: blue'> $row->username</b></div>
+                            <a href='edit.php?id=$row->userId'><div class='col-md-2' style='margin-top: 2%'><button>edit</button></div></a> 
+                            <a href='delete.php?id=$row->userId'><div class='col-md-2' style='margin-top: 2%'> <button>delete</button></div></a>
+                            <a href='delete.php?id=$row->userId'><div class='col-md-2' style='margin-top: 2%'> <button>delete</button></div></a>                            
+
+                        </div>
+                    ";
+                };
+                ?>
+            </table>
+
+        </div>
     </div>
 </div>
     <script>
         $('#addPhone').click(function () {
-            $('#input_acc').css("none","block")
+            $('#input_acc').css("display","none")
             $('#input_form').css("display", "block")
-            $('#list_phone').css("none","block")
+            $('#list_phone').css("display","none")
+            $('#list_acc').css("display","none")
+            $('#list_cus').css("display","none")
         })
         $('#addAcc').click(function () {
             $('#input_acc').css("display","block")
+            $('#input_form').css("display", "none")
+            $('#list_phone').css("display","none")
+            $('#list_acc').css("display","none")
+            $('#list_cus').css("display","none")
         })
         $('#lst_phone').click(function () {
             $('#list_phone').css("display","block")
+            $('#input_form').css("display", "none")
+            $('#input_acc').css("display","none")
+            $('#list_acc').css("display","none")
+            $('#list_cus').css("display","none")
         })
+        $('#lst_acc').click(function () {
+            $('#list_phone').css("display","none")
+            $('#input_form').css("display", "none")
+            $('#input_acc').css("display","none")
+            $('#list_acc').css("display","block")
+            $('#list_cus').css("display","none")
+        })
+        $('#lst_cus').click(function () {
+            $('#list_phone').css("display","none")
+            $('#input_form').css("display", "none")
+            $('#input_acc').css("display","none")
+            $('#list_acc').css("display","none")
+            $('#list_cus').css("display","block")
+        })
+
     </script>
 </body>
 </html>
