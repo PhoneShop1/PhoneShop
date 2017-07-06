@@ -21,123 +21,132 @@
 
 </head>
 <body style="background-color: #f0f0f5;">
-	<nav class="navbar navbar-default navbar-fixed-top" style="background-color: #b3e0ff;">
-		<div class="container-fluid">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">HengLay PhoneShop</a>
-                <h5 class="navbar-header" style="margin-top: 20px;">Tel: 077 465615</h5>
-			</div>
-            <div class="navbar-header ">
+<nav class="navbar navbar-default" style="background-color: #b3e0ff;">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">HengLay PhoneShop</a>
+            <h5 class="navbar-header" style="margin-top: 20px;">Tel: 077 465615</h5>
+        </div>
+        <div class="navbar-header ">
 
-            </div>
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				
-				<form class="navbar-form navbar-right">
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Search">
-					</div>
-					<button type="submit" class="btn btn-default">Search</button>
-				</form>
-                <div class="nav navbar-nav navbar-right">
-                    <?php
-                        session_start();
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                        if(isset($_COOKIE['username'])){
-                            echo $_COOKIE['username'];
-                        }
-                        if(isset($_SESSION['username'])){
-                            echo $_GET['name'];
-
-                        }else{
-
-                            echo "";
-                        }
-                    ?>
+            <form class="navbar-form navbar-right">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
                 </div>
+                <button type="submit" class="btn btn-default">Search</button>
+            </form>
+            <div class="nav navbar-nav navbar-right"s>
+                <form class="navbar-form navbar-right">
+                <?php
+                session_start();
 
-                </a>
-				<ul class="nav navbar-nav navbar-right">
-<!--                    <p><a href="LogOut.php" class="btn btn-info btn-block" id="myBtn">Log Out</a></p>-->
-                        <form class="navbar-form navbar-right">
-                            <div >
-                                <a href="logout.php"> <button type="button" class="btn btn-default ">Log out</button></a>
-                            </div>
-                        </form>
-					<li class="dropdown">
-<!--                        <button type="button" class="btn btn-default btn-lg"><a href="LogOut.php">log out</a></button>-->
-                        <form class="navbar-form navbar-right">
-                        <div >
-                            <button type="button" class="btn btn-default" id="myBtn">Login</button>
-                        </div>
+                if(isset($_COOKIE['username'])){
+                    echo $_COOKIE['username'];
+                }
+                if(isset($_SESSION['username'])){
+                    echo $_GET['name'];
+                }else{
+                    echo "";
+                }
+                ?>
+                </form>
+            </div>
+            </a>
+            <ul class="nav navbar-nav navbar-right">
+                <!--                    <p><a href="LogOut.php" class="btn btn-info btn-block" id="myBtn">Log Out</a></p>-->
+                <?php
+                if(isset($_SESSION['username'])){
+                    echo "<form class=\"navbar-form navbar-right\">
+                                <div >
+                                    <a href=\"logout.php\"> <button type=\"button\" class=\"btn btn-default \">Log out</button></a>
+                                </div>
+                            </form>";
+                }
+                ?>
 
-                        </form>
-                        <!-- Modal -->
-                        <div class="modal fade" id="myModal" role="dialog">
-                            <div id="login-overlay" class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                                        <h4 class="modal-title" id="myModalLabel">Login to henglay.com</h4>
+                <li class="dropdown">
+                    <!--                        <button type="button" class="btn btn-default btn-lg"><a href="LogOut.php">log out</a></button>-->
+                    <?php
+                    if(!isset($_SESSION['username'])){
+                        echo "<form class=\"navbar-form navbar-right\">
+                                    <div >
+                                        <button type=\"button\" class=\"btn btn-default\" id=\"myBtn\">Login</button>
                                     </div>
-                                    <div class="modal-body">
-                                        <div class="row">
-                                            <div class="col-xs-6">
-                                                <div class="well">
-                                                    <form role="form" id="loginForm" method="POST" action="login.php?op=in" novalidate="novalidate">
-                                                        <div class="form-group">
-                                                            <label for="username" class="control-label">Username</label>
-                                                            <input type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="Username">
-                                                            <span class="help-block"></span>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="password" class="control-label">Password</label>
-                                                            <input type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password">
-                                                            <span class="help-block"></span>
-                                                        </div>
-                                                        <div id="loginErrorMsg" class="alert alert-error hide">Wrong username og password</div>
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox" name="r" id="remember"> Remember login
-                                                            </label>
-                                                            <p class="help-block">(if this is a private computer)</p>
-                                                        </div>
-                                                        <button type="submit" class="btn btn-success btn-block">Login</button>
-                                                        <a href="/forgot/" class="btn btn-default btn-block">Help to login</a>
-                                                    </form>
-                                                </div>
+            
+                                </form>";
+                    }
+                    ?>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div id="login-overlay" class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Login to henglay.com</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <div class="well">
+                                                <form role="form" id="loginForm" method="POST" action="login.php?op=in" novalidate="novalidate">
+                                                    <div class="form-group">
+                                                        <label for="username" class="control-label">Username</label>
+                                                        <input type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="Username">
+                                                        <span class="help-block"></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="password" class="control-label">Password</label>
+                                                        <input type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password">
+                                                        <span class="help-block"></span>
+                                                    </div>
+                                                    <div id="loginErrorMsg" class="alert alert-error hide">Wrong username og password</div>
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" name="r" id="remember"> Remember login
+                                                        </label>
+                                                        <p class="help-block">(if this is a private computer)</p>
+                                                    </div>
+                                                    <button type="submit" class="btn btn-success btn-block">Login</button>
+                                                    <a href="/forgot/" class="btn btn-default btn-block">Help to login</a>
+                                                </form>
                                             </div>
-                                            <div class="col-xs-6">
-                                                <p class="lead">Register now for <span class="text-success">FREE</span></p>
-                                                <ul class="list-unstyled" style="line-height: 2">
-                                                    <li><span class="fa fa-check text-success"></span> See all your orders</li>
-                                                    <li><span class="fa fa-check text-success"></span> Fast re-order</li>
-                                                    <li><span class="fa fa-check text-success"></span> Save your favorites</li>
-                                                    <li><span class="fa fa-check text-success"></span> Fast checkout</li>
-                                                    <li><span class="fa fa-check text-success"></span> Get a gift <small>(only new customers)</small></li>
-                                                    <li><a href="/read-more/"><u>Read more</u></a></li>
-                                                </ul>
-                                                <p><a href="register.php" class="btn btn-info btn-block">Yes please, register now!</a></p>
-                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p class="lead">Register now for <span class="text-success">FREE</span></p>
+                                            <ul class="list-unstyled" style="line-height: 2">
+                                                <li><span class="fa fa-check text-success"></span> See all your orders</li>
+                                                <li><span class="fa fa-check text-success"></span> Fast re-order</li>
+                                                <li><span class="fa fa-check text-success"></span> Save your favorites</li>
+                                                <li><span class="fa fa-check text-success"></span> Fast checkout</li>
+                                                <li><span class="fa fa-check text-success"></span> Get a gift <small>(only new customers)</small></li>
+                                                <li><a href="/read-more/"><u>Read more</u></a></li>
+                                            </ul>
+                                            <p><a href="register.php" class="btn btn-info btn-block">Yes please, register now!</a></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-            </div>
-					</li>
-				</ul>
-			</div><!-- /.navbar-collapse -->
-		</div><!-- /.container-fluid -->
-	</nav>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
 
-    <div id="carousel-example-generic" class="carousel slide col-md-12" data-ride="carousel" style="background: none; margin-top: 50px;">
+    <div id="carousel-example-generic" class="carousel slide col-md-8 col-md-offset-1" data-ride="carousel" style="background: none; margin-top: 50px;">
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -256,7 +265,7 @@
                         <?php
                         require_once('dbconf.php');
 //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
-                        $sql="select id,namee,photo from network where brand like'Huawei' limit 4";
+                        $sql="select id,namee,photo from network where brand ='Huawei' ORDER BY id DESC limit 4";
                         $result = $conn->query($sql);
 
                             while ($row = mysqli_fetch_object($result)) {
@@ -297,7 +306,7 @@
 
                 <?php
                 require_once('dbconf.php');
-                $sql="select id,namee,photo from network where brand like'Samsung' limit 4";
+                $sql="select id,namee,photo from network where brand ='Samsung' ORDER BY id DESC limit 4";
                 $result = $conn->query($sql);
 
                     while ($row=mysqli_fetch_object($result)){
@@ -336,7 +345,7 @@
                     <?php
                     require_once('dbconf.php');
                     //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
-                    $sql="select id,namee,photo from network where brand like 'iphone' limit 4";
+                    $sql="select id,namee,photo from network where brand ='iphone' ORDER BY id DESC limit 4";
                     $result = $conn->query($sql);
 
                     while ($row = mysqli_fetch_object($result)) {
@@ -377,7 +386,7 @@
                     <?php
                     require_once('dbconf.php');
                     //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
-                    $sql="select id,namee,photo from network where brand like 'oppo' limit 4";
+                    $sql="select id,namee,photo from network where brand ='oppo' ORDER BY id DESC limit 4";
                     $result = $conn->query($sql);
 
                     while ($row = mysqli_fetch_object($result)) {
@@ -400,45 +409,45 @@
                     ?>
 
 			</div>
-			<div class="thumbnail panel panel-default  col-md-12 col-xs-12 col-sm-12" >
-				<nav class="navbar navbar-default" id="pageheader">
-					<div class="container-fluid">
-						<div class="navbar-header">
-							<a class="navbar-brand" href="#">
-								<img alt="Brand" src="img\sugar.jpg" style=" height: 20px;">
-							</a>
-						</div>
-						<div  class="navbar-header navbar-right" >
-							<a  href="samsung.php?model=sugar">
-								<button class="btn btn-default navbar-btn " >more</button>
-							</a>
-						</div>
-					</div>
-				</nav>
-                        <?php
-                        require_once('dbconf.php');
-                        //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
-                        $sql="select id,namee,photo from network where brand like 'sugar' limit 4";
-                        $result = $conn->query($sql);
-
-                        while ($row = mysqli_fetch_object($result)) {
-                            echo"
-                                        
-                            <a href='detail.php?id=$row->id' >
-                            <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
-                                <div class=\"thumbnail\">
-                                    <img src=\"img/".$row->photo."\" alt=\"...\">
-                                    <div class=\"caption\">
-                                        
-                                        $row->namee
-                                     </div>
-                                 </div>
-                             </div></a>
-                                    ";
-                        }
-
-                        ?>
-            </div>
+<!--			<div class="thumbnail panel panel-default  col-md-12 col-xs-12 col-sm-12" >-->
+<!--				<nav class="navbar navbar-default" id="pageheader">-->
+<!--					<div class="container-fluid">-->
+<!--						<div class="navbar-header">-->
+<!--							<a class="navbar-brand" href="#">-->
+<!--								<img alt="Brand" src="img\sugar.jpg" style=" height: 20px;">-->
+<!--							</a>-->
+<!--						</div>-->
+<!--						<div  class="navbar-header navbar-right" >-->
+<!--							<a  href="samsung.php?model=sugar">-->
+<!--								<button class="btn btn-default navbar-btn " >more</button>-->
+<!--							</a>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</nav>-->
+<!--                        --><?php
+//                        require_once('dbconf.php');
+//                        //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
+//                        $sql="select id,namee,photo from network where brand like 'sugar' limit 4";
+//                        $result = $conn->query($sql);
+//
+//                        while ($row = mysqli_fetch_object($result)) {
+//                            echo"
+//
+//                            <a href='detail.php?id=$row->id' >
+//                            <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
+//                                <div class=\"thumbnail\">
+//                                    <img src=\"img/".$row->photo."\" alt=\"...\">
+//                                    <div class=\"caption\">
+//
+//                                        $row->namee
+//                                     </div>
+//                                 </div>
+//                             </div></a>
+//                                    ";
+//                        }
+//
+//                        ?>
+<!--            </div>-->
         </div>
         <div class="panel col-md-2 col-xs-2" style="background-color: #f0f0f5">
             <div class="list-group">
@@ -452,7 +461,7 @@
             </div>
         </div>
     </div>
-        <a href="Network.php"><button>add</button></a>
+
 
 	</body>
 	</html>
