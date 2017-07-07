@@ -265,7 +265,7 @@
                         <?php
                         require_once('dbconf.php');
 //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
-                        $sql="select id,namee,photo from network where brand ='Huawei' ORDER BY id DESC limit 4";
+                        $sql="select id,namee,photo,price from network where brand ='Huawei' ORDER BY id DESC limit 4";
                         $result = $conn->query($sql);
 
                             while ($row = mysqli_fetch_object($result)) {
@@ -273,13 +273,12 @@
                             
                                 <a href='detail.php?id=$row->id' >
                                    <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
-					<div class=\"thumbnail\">
+					<div class=\"thumbnail\" style='height: 220px;'>
 						<img src=\"img/".$row->photo."\" alt=\"...\">
 						<div class=\"caption\">
-							
 							$row->namee
-
                             </div>
+                            <center><div style='color: red'>$row->price</div></center>
                         </div>
                     </div></a>
                         ";
@@ -306,18 +305,19 @@
 
                 <?php
                 require_once('dbconf.php');
-                $sql="select id,namee,photo from network where brand ='Samsung' ORDER BY id DESC limit 4";
+                $sql="select id,namee,photo,price from network where brand ='Samsung' ORDER BY id DESC limit 4";
                 $result = $conn->query($sql);
 
                     while ($row=mysqli_fetch_object($result)){
                     echo "
                         <a href='detail.php?id=$row->id' >
                             <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
-                                <div class=\"thumbnail\">
+                                <div class=\"thumbnail\" style='height: 250px;'>
                                     <img src=\"img/".$row->photo."\" alt=\"...\">
-                                    <div class=\"caption\">
+                                    <center><div class=\"caption\">
                                         $row->namee
-                                    </div>
+                                    </div></center>
+                                    <center><div style='color: red'>$row->price</div></center>
                                 </div>
                             </div>
                         </a>
@@ -345,7 +345,7 @@
                     <?php
                     require_once('dbconf.php');
                     //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
-                    $sql="select id,namee,photo from network where brand ='iphone' ORDER BY id DESC limit 4";
+                    $sql="select id,namee,photo,price from network where brand ='iphone' ORDER BY id DESC limit 4";
                     $result = $conn->query($sql);
 
                     while ($row = mysqli_fetch_object($result)) {
@@ -353,13 +353,12 @@
                                 
                                     <a href='detail.php?id=$row->id' >
                                        <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
-                        <div class=\"thumbnail\">
+                        <div class=\"thumbnail\" style='height: 220px;'>
                             <img src=\"img/".$row->photo."\" alt=\"...\">
-                            <div class=\"caption\">
-                                
+                            <center><div class=\"caption\">
                                 $row->namee
-    
-                                </div>
+                                </div></center>
+                             <center><div style='color: red'>$row->price</div></center>
                             </div>
                         </div></a>
                             ";
@@ -386,7 +385,7 @@
                     <?php
                     require_once('dbconf.php');
                     //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
-                    $sql="select id,namee,photo from network where brand ='oppo' ORDER BY id DESC limit 4";
+                    $sql="select id,namee,photo,price from network where brand ='oppo' ORDER BY id DESC limit 4";
                     $result = $conn->query($sql);
 
                     while ($row = mysqli_fetch_object($result)) {
@@ -394,13 +393,12 @@
                                     
                                         <a href='detail.php?id=$row->id' >
                                            <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
-                            <div class=\"thumbnail\">
+                            <div class=\"thumbnail\" style='height: 220px;'>
                                 <img src=\"img/".$row->photo."\" alt=\"...\">
-                                <div class=\"caption\">
-                                    
+                                <center><div class=\"caption\">
                                     $row->namee
-        
-                                    </div>
+                                    </div></center>
+                                <center><div style='color: red'>$row->price</div></center>
                                 </div>
                             </div></a>
                                 ";
