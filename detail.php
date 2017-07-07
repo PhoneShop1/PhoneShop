@@ -191,7 +191,7 @@
             $result = mysqli_query($db,$sql);
             while ($row = mysqli_fetch_object($result)) {
                 echo "
-                    <div id=\"$row->id\" class=\"flex - item - 2\">
+                    <div id=\"$row->id\" class=\"flex-item-2\">
                             <div class='col-md-12  col-sm-12'>
                                 <div  class='col-md-1 col-md-offset-5' method=\"request\">
                                     <a href=\"delete.php\" onClick=\"return confirm('Are you sure you want to delete?')\"><button>Delete
