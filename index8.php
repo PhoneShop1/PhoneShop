@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Heng Lay Phone Shop</title>
-	<link rel="stylesheet" type="text/css" href="Public/vendors/bootstrap/css/bootstrap.min.css">
-	<meta content="width=device-width,initial-scale=1" name="viewpoet">
+    <title>Heng Lay Phone Shop</title>
+    <link rel="stylesheet" type="text/css" href="Public/vendors/bootstrap/css/bootstrap.min.css">
+    <meta content="width=device-width,initial-scale=1" name="viewpoet">
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="phoneshop.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="phoneshop.css">
     <script src="phoneshop.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -42,7 +42,7 @@
 
             <form class="navbar-form navbar-right">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search" id="search_txt">
+                    <input id="search_txt" type="text" class="form-control" placeholder="Search Phone">
                 </div>
                 <button type="submit" class="btn btn-default">Search</button>
             </form>
@@ -145,6 +145,8 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
+<div id="result" style="display:none"></div>
+<div id="display">
 
     <div id="carousel-example-generic" class="carousel slide col-md-8 col-md-offset-1" data-ride="carousel" style="background: none; margin-top: 50px;">
         <!-- Indicators -->
@@ -188,88 +190,88 @@
         </a>
     </div>
     <div class="container col-md-12 col-xs-12 col-sm-12">
-    <nav class="navbar navbar-default col-md-8 col-md-offset-2">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+        <nav class="navbar navbar-default col-md-8 col-md-offset-2">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 
-            </div>
+                </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
 
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mobile Phones <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mobile Phones <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
 
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accessories <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accessories <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
     </div>
-	<div class="container col-md-11  col-sm-11 col-xs-11 " id="container">
-		<div class="panel col-md-2 col-xs-2" style="background-color: #f0f0f5">
+    <div class="container col-md-11  col-sm-11 col-xs-11 " id="container">
+        <div class="panel col-md-2 col-xs-2" style="background-color: #f0f0f5">
             <div class="list-group">
                 <a href="#" class="list-group-item active">
-                   Mobile Phone
+                    Mobile Phone
                 </a>
                 <a href="samsung.php?model=Huawei" class="list-group-item">Huawei</a>
                 <a href="samsung.php?model=Samsung" class="list-group-item">Samsung</a>
                 <a href="samsung.php?model=iphone" class="list-group-item">iphone</a>
                 <a href="samsung.php?model=oppo" class="list-group-item">oppo</a>
             </div>
-		</div>
+        </div>
         <div class="thumbnail panel panel-default  col-md-8 col-xs-8 col-sm-8" >
-			<div class="thumbnail panel panel-default  col-md-12 col-xs-12 col-sm-12" >
-				<nav class="navbar navbar-default" id="pageheader">
-					<div class="container-fluid">
-						<div class="navbar-header">
-						<img alt="Brand" src="img\huawei.png" style="width: 100px; height: 35px; margin-top: 10px;">
-							
-						</div>
-						<div  class="navbar-header navbar-right" >
-							<a  href="samsung.php?model=Huawei">
-								<button class="btn btn-default navbar-btn " id="btn">more</button>
-							</a>
-						</div>
-					</div>
-				</nav>
-                        <?php
-                        require_once('dbconf.php');
-//                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
-                        $sql="select id,namee,photo,price from network where brand ='Huawei' ORDER BY id DESC limit 4";
-                        $result = $conn->query($sql);
+            <div class="thumbnail panel panel-default  col-md-12 col-xs-12 col-sm-12" >
+                <nav class="navbar navbar-default" id="pageheader">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <img alt="Brand" src="img\huawei.png" style="width: 100px; height: 35px; margin-top: 10px;">
 
-                            while ($row = mysqli_fetch_object($result)) {
-                        echo"
+                        </div>
+                        <div  class="navbar-header navbar-right" >
+                            <a  href="samsung.php?model=Huawei">
+                                <button class="btn btn-default navbar-btn " id="btn">more</button>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+                <?php
+                require_once('dbconf.php');
+                //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
+                $sql="select id,namee,photo,price from network where brand ='Huawei' ORDER BY id DESC limit 4";
+                $result = $conn->query($sql);
+
+                while ($row = mysqli_fetch_object($result)) {
+                    echo"
                             
                                 <a href='detail.php?id=$row->id' >
                                    <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
@@ -282,33 +284,33 @@
                         </div>
                     </div></a>
                         ";
-                   }
+                }
 
-                        ?>
-			</div>
+                ?>
+            </div>
 
-			<div class="thumbnail panel panel-default col-md-12 col-xs-12 col-sm-12" >
-				<nav class="navbar navbar-default" id="pageheader">
-					<div class="container-fluid">
-						<div class="navbar-header">
-							<a class="navbar-brand" href="#">
-								<img alt="Brand" src="http://www.pngall.com/wp-content/uploads/2016/03/Samsung-Logo-Transparent-PNG.png" style="width: 100px; height: 20px;">
-							</a>
-						</div>
-						<div  class="navbar-header navbar-right" >
-							<a  href="samsung.php?model=Samsung">
-								<button class="btn btn-default navbar-btn " >more</button>
-							</a>
-						</div>
-					</div>
-				</nav>
+            <div class="thumbnail panel panel-default col-md-12 col-xs-12 col-sm-12" >
+                <nav class="navbar navbar-default" id="pageheader">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">
+                                <img alt="Brand" src="http://www.pngall.com/wp-content/uploads/2016/03/Samsung-Logo-Transparent-PNG.png" style="width: 100px; height: 20px;">
+                            </a>
+                        </div>
+                        <div  class="navbar-header navbar-right" >
+                            <a  href="samsung.php?model=Samsung">
+                                <button class="btn btn-default navbar-btn " >more</button>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
 
                 <?php
                 require_once('dbconf.php');
                 $sql="select id,namee,photo,price from network where brand ='Samsung' ORDER BY id DESC limit 4";
                 $result = $conn->query($sql);
 
-                    while ($row=mysqli_fetch_object($result)){
+                while ($row=mysqli_fetch_object($result)){
                     echo "
                         <a href='detail.php?id=$row->id' >
                             <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
@@ -323,33 +325,33 @@
                         </a>
     
                     ";
-                    }
+                }
                 ?>
-			</div>
-<!--            Samsung-->
-			<div class="thumbnail panel panel-default  col-md-12 col-xs-12 col-sm-12" >
-				<nav class="navbar navbar-default" id="pageheader">
-					<div class="container-fluid">
-						<div class="navbar-header">
-							<a class="navbar-brand" href="#">
-								<img alt="Brand" src="img\iphone-brand.png" style=" height: 30px;">
-							</a>
-						</div>
-						<div  class="navbar-header navbar-right" >
-							<a  href="samsung.php?model=iphone">
-								<button class="btn btn-default navbar-btn " >more</button>
-							</a>
-						</div>
-					</div>
-				</nav>
-                    <?php
-                    require_once('dbconf.php');
-                    //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
-                    $sql="select id,namee,photo,price from network where brand ='iphone' ORDER BY id DESC limit 4";
-                    $result = $conn->query($sql);
+            </div>
+            <!--            Samsung-->
+            <div class="thumbnail panel panel-default  col-md-12 col-xs-12 col-sm-12" >
+                <nav class="navbar navbar-default" id="pageheader">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">
+                                <img alt="Brand" src="img\iphone-brand.png" style=" height: 30px;">
+                            </a>
+                        </div>
+                        <div  class="navbar-header navbar-right" >
+                            <a  href="samsung.php?model=iphone">
+                                <button class="btn btn-default navbar-btn " >more</button>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+                <?php
+                require_once('dbconf.php');
+                //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
+                $sql="select id,namee,photo,price from network where brand ='iphone' ORDER BY id DESC limit 4";
+                $result = $conn->query($sql);
 
-                    while ($row = mysqli_fetch_object($result)) {
-                        echo"
+                while ($row = mysqli_fetch_object($result)) {
+                    echo"
                                 
                                     <a href='detail.php?id=$row->id' >
                                        <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
@@ -362,34 +364,34 @@
                             </div>
                         </div></a>
                             ";
-                    }
+                }
 
-                    ?>
+                ?>
 
-			</div>
-			<div class="thumbnail panel panel-default col-md-12 col-xs-12 col-sm-12" >
-				<nav class="navbar navbar-default" id="pageheader">
-					<div class="container-fluid">
-						<div class="navbar-header">
-							<a class="navbar-brand" href="#">
-								<img alt="Brand" src="img\oppo.png" style=" height: 30px;">
-							</a>
-						</div>
-						<div  class="navbar-header navbar-right" >
-							<a  href="samsung.php?model=oppo">
-								<button class="btn btn-default navbar-btn " >more</button>
-							</a>
-						</div>
-					</div>
-				</nav>
-                    <?php
-                    require_once('dbconf.php');
-                    //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
-                    $sql="select id,namee,photo,price from network where brand ='oppo' ORDER BY id DESC limit 4";
-                    $result = $conn->query($sql);
+            </div>
+            <div class="thumbnail panel panel-default col-md-12 col-xs-12 col-sm-12" >
+                <nav class="navbar navbar-default" id="pageheader">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">
+                                <img alt="Brand" src="img\oppo.png" style=" height: 30px;">
+                            </a>
+                        </div>
+                        <div  class="navbar-header navbar-right" >
+                            <a  href="samsung.php?model=oppo">
+                                <button class="btn btn-default navbar-btn " >more</button>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+                <?php
+                require_once('dbconf.php');
+                //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
+                $sql="select id,namee,photo,price from network where brand ='oppo' ORDER BY id DESC limit 4";
+                $result = $conn->query($sql);
 
-                    while ($row = mysqli_fetch_object($result)) {
-                        echo"
+                while ($row = mysqli_fetch_object($result)) {
+                    echo"
                                     
                                         <a href='detail.php?id=$row->id' >
                                            <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
@@ -402,50 +404,50 @@
                                 </div>
                             </div></a>
                                 ";
-                    }
+                }
 
-                    ?>
+                ?>
 
-			</div>
-<!--			<div class="thumbnail panel panel-default  col-md-12 col-xs-12 col-sm-12" >-->
-<!--				<nav class="navbar navbar-default" id="pageheader">-->
-<!--					<div class="container-fluid">-->
-<!--						<div class="navbar-header">-->
-<!--							<a class="navbar-brand" href="#">-->
-<!--								<img alt="Brand" src="img\sugar.jpg" style=" height: 20px;">-->
-<!--							</a>-->
-<!--						</div>-->
-<!--						<div  class="navbar-header navbar-right" >-->
-<!--							<a  href="samsung.php?model=sugar">-->
-<!--								<button class="btn btn-default navbar-btn " >more</button>-->
-<!--							</a>-->
-<!--						</div>-->
-<!--					</div>-->
-<!--				</nav>-->
-<!--                        --><?php
-//                        require_once('dbconf.php');
-//                        //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
-//                        $sql="select id,namee,photo from network where brand like 'sugar' limit 4";
-//                        $result = $conn->query($sql);
-//
-//                        while ($row = mysqli_fetch_object($result)) {
-//                            echo"
-//
-//                            <a href='detail.php?id=$row->id' >
-//                            <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
-//                                <div class=\"thumbnail\">
-//                                    <img src=\"img/".$row->photo."\" alt=\"...\">
-//                                    <div class=\"caption\">
-//
-//                                        $row->namee
-//                                     </div>
-//                                 </div>
-//                             </div></a>
-//                                    ";
-//                        }
-//
-//                        ?>
-<!--            </div>-->
+            </div>
+            <!--			<div class="thumbnail panel panel-default  col-md-12 col-xs-12 col-sm-12" >-->
+            <!--				<nav class="navbar navbar-default" id="pageheader">-->
+            <!--					<div class="container-fluid">-->
+            <!--						<div class="navbar-header">-->
+            <!--							<a class="navbar-brand" href="#">-->
+            <!--								<img alt="Brand" src="img\sugar.jpg" style=" height: 20px;">-->
+            <!--							</a>-->
+            <!--						</div>-->
+            <!--						<div  class="navbar-header navbar-right" >-->
+            <!--							<a  href="samsung.php?model=sugar">-->
+            <!--								<button class="btn btn-default navbar-btn " >more</button>-->
+            <!--							</a>-->
+            <!--						</div>-->
+            <!--					</div>-->
+            <!--				</nav>-->
+            <!--                        --><?php
+            //                        require_once('dbconf.php');
+            //                        //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
+            //                        $sql="select id,namee,photo from network where brand like 'sugar' limit 4";
+            //                        $result = $conn->query($sql);
+            //
+            //                        while ($row = mysqli_fetch_object($result)) {
+            //                            echo"
+            //
+            //                            <a href='detail.php?id=$row->id' >
+            //                            <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
+            //                                <div class=\"thumbnail\">
+            //                                    <img src=\"img/".$row->photo."\" alt=\"...\">
+            //                                    <div class=\"caption\">
+            //
+            //                                        $row->namee
+            //                                     </div>
+            //                                 </div>
+            //                             </div></a>
+            //                                    ";
+            //                        }
+            //
+            //                        ?>
+            <!--            </div>-->
         </div>
         <div class="panel col-md-2 col-xs-2" style="background-color: #f0f0f5">
             <div class="list-group">
@@ -459,6 +461,7 @@
             </div>
         </div>
     </div>
+</div>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script>
     $(document).ready(function(){
@@ -468,7 +471,7 @@
             $("#display").hide();
             if(txt != ''){
                 $.ajax({
-                    url: "samsung.php",
+                    url: "processSearch.php",
                     method: "post",
                     data: {search:txt},
                     dataType: "text",
@@ -486,5 +489,5 @@
     });
 </script>
 
-	</body>
-	</html>
+</body>
+</html>
