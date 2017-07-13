@@ -40,11 +40,15 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-            <form class="navbar-form navbar-right">
+            <form class="navbar-form navbar-right" action="searchPhone.php" method="get">
                 <div class="form-group">
-                    <input id="search_txt" type="text" class="form-control" placeholder="Search Phone">
+                    <input list="result" id="search_txt" name="search" type="text" class="form-control" placeholder="Search Phone">
+                    <datalist id="result">
+
+                    </datalist>
                 </div>
                 <button type="submit" class="btn btn-default">Search</button>
+
             </form>
             <div class="nav navbar-nav navbar-right">
                 <form class="navbar-form navbar-right">
@@ -145,8 +149,6 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-<div id="result" style="display:none"></div>
-<div id="display">
 
     <div id="carousel-example-generic" class="carousel slide col-md-8 col-md-offset-1" data-ride="carousel" style="background: none; margin-top: 50px;">
         <!-- Indicators -->
@@ -461,7 +463,6 @@
             </div>
         </div>
     </div>
-</div>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script>
     $(document).ready(function(){

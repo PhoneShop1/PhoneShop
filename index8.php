@@ -40,9 +40,15 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-            <form class="navbar-form navbar-right">
+<!--            <form class="navbar-form navbar-right">-->
+<!--                <div class="form-group">-->
+<!--                    <input id="search_txt" type="text" class="form-control" placeholder="Search Phone">-->
+<!--                </div>-->
+<!--                <button type="submit" class="btn btn-default">Search</button>-->
+<!--            </form>-->
+            <form class="navbar-form navbar-right" action="processSearch.php" method="get">
                 <div class="form-group">
-                    <input id="search_txt" type="text" class="form-control" placeholder="Search Phone">
+                    <input name="search" type="text" class="form-control navbar-form navbar-right" placeholder="Search">
                 </div>
                 <button type="submit" class="btn btn-default">Search</button>
             </form>
