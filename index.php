@@ -281,8 +281,7 @@
                             <center><div style='color: red'>$row->price</div></center>
                         </div>
                     </div></a>
-                        ";
-                   }
+                        ";}
 
                         ?>
 			</div>
