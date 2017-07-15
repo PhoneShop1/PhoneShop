@@ -146,7 +146,7 @@ if(isset($_POST['newnote'])){
             <a href="#list_phone" class="list-group-item" id="lst_phone">List Phone</a>
             <a href="#list_acc" class="list-group-item" id="lst_acc">List Accessories</a>
             <a href="#list_cus" class="list-group-item" id="lst_cus">List Customer</a>
-
+            <a href="#add_model" class="list-group-item" id="ad_model">Add New Model</a>
         </div>
     </div>
     <div class="col-md-9">
@@ -348,6 +348,14 @@ if(isset($_POST['newnote'])){
             </table>
 
         </div>
+        <div id="add_model" style="display: none">
+            <form method="post" action="addNewModel.php" enctype="multipart/form-data" style="margin-top: 30px">
+                <input type="hidden"  name="size" value="1000000" />
+                <div class="col-md-8 col-md-offset-2"><input type="file" name="images"/></div>
+                <div class="col-md-8 col-md-offset-2"><textarea name="namey" placeholder="name"></textarea></div>
+                <div class="col-md-8 col-md-offset-2"><button  type="submit" name="upload">Enter</button></div>
+            </form>
+        </div>
     </div>
 </div>
     <script>
@@ -357,6 +365,7 @@ if(isset($_POST['newnote'])){
             $('#list_phone').css("display","none")
             $('#list_acc').css("display","none")
             $('#list_cus').css("display","none")
+            $('#add_model').css("display","none")
         })
         $('#addAcc').click(function () {
             $('#input_acc').css("display","block")
@@ -364,6 +373,7 @@ if(isset($_POST['newnote'])){
             $('#list_phone').css("display","none")
             $('#list_acc').css("display","none")
             $('#list_cus').css("display","none")
+            $('#add_model').css("display","none")
         })
         $('#lst_phone').click(function () {
             $('#list_phone').css("display","block")
@@ -371,13 +381,17 @@ if(isset($_POST['newnote'])){
             $('#input_acc').css("display","none")
             $('#list_acc').css("display","none")
             $('#list_cus').css("display","none")
+            $('#add_model').css("display","none")
         })
         $('#lst_acc').click(function () {
             $('#list_phone').css("display","none")
             $('#input_form').css("display", "none")
             $('#input_acc').css("display","none")
             $('#list_acc').css("display","block")
+            $('#ad_model').css("display","none")
             $('#list_cus').css("display","none")
+            $('#add_model').css("display","none")
+
         })
         $('#lst_cus').click(function () {
             $('#list_phone').css("display","none")
@@ -385,6 +399,15 @@ if(isset($_POST['newnote'])){
             $('#input_acc').css("display","none")
             $('#list_acc').css("display","none")
             $('#list_cus').css("display","block")
+            $('#add_model').css("display","none")
+        })
+        $('#ad_model').click(function () {
+            $('#list_phone').css("display","none")
+            $('#input_form').css("display", "none")
+            $('#input_acc').css("display","none")
+            $('#list_acc').css("display","none")
+            $('#list_cus').css("display","none")
+            $('#add_model').css("display","block")
         })
 
     </script>

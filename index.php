@@ -42,11 +42,11 @@
 
             <form class="navbar-form navbar-right">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
+                    <input type="text" class="form-control" placeholder="Search" id="search_txt">
                 </div>
                 <button type="submit" class="btn btn-default">Search</button>
             </form>
-            <div class="nav navbar-nav navbar-right"s>
+            <div class="nav navbar-nav navbar-right">
                 <form class="navbar-form navbar-right">
                 <?php
                 session_start();
@@ -236,230 +236,147 @@
     </nav>
     </div>
 	<div class="container col-md-11  col-sm-11 col-xs-11 " id="container">
-		<div class="panel col-md-2 col-xs-2" style="background-color: #f0f0f5">
-            <div class="list-group">
-                <a href="#" class="list-group-item active">
-                   Mobile Phone
-                </a>
-                <a href="samsung.php?model=Huawei" class="list-group-item">Huawei</a>
-                <a href="samsung.php?model=Samsung" class="list-group-item">Samsung</a>
-                <a href="samsung.php?model=iphone" class="list-group-item">iphone</a>
-                <a href="samsung.php?model=oppo" class="list-group-item">oppo</a>
-            </div>
-		</div>
-        <div class="thumbnail panel panel-default  col-md-8 col-xs-8 col-sm-8" >
-			<div class="thumbnail panel panel-default  col-md-12 col-xs-12 col-sm-12" >
-				<nav class="navbar navbar-default" id="pageheader">
-					<div class="container-fluid">
-						<div class="navbar-header">
-						<img alt="Brand" src="img\huawei.png" style="width: 100px; height: 35px; margin-top: 10px;">
-							
-						</div>
-						<div  class="navbar-header navbar-right" >
-							<a  href="samsung.php?model=Huawei">
-								<button class="btn btn-default navbar-btn " id="btn">more</button>
-							</a>
-						</div>
-					</div>
-				</nav>
-                        <?php
-                        require_once('dbconf.php');
-//                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
-                        $sql="select id,namee,photo,price from network where brand ='Huawei' ORDER BY id DESC limit 4";
-                        $result = $conn->query($sql);
-
-                            while ($row = mysqli_fetch_object($result)) {
-                        echo"
-                            
-                                <a href='detail.php?id=$row->id' >
-                                   <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
-					<div class=\"thumbnail\" style='height: 220px;'>
-						<img src=\"img/".$row->photo."\" alt=\"...\">
-						<div class=\"caption\">
-							$row->namee
-                            </div>
-                            <center><div style='color: red'>$row->price</div></center>
-                        </div>
-                    </div></a>
-                        ";
-                   }
-
-                        ?>
-			</div>
-
-			<div class="thumbnail panel panel-default col-md-12 col-xs-12 col-sm-12" >
-				<nav class="navbar navbar-default" id="pageheader">
-					<div class="container-fluid">
-						<div class="navbar-header">
-							<a class="navbar-brand" href="#">
-								<img alt="Brand" src="http://www.pngall.com/wp-content/uploads/2016/03/Samsung-Logo-Transparent-PNG.png" style="width: 100px; height: 20px;">
-							</a>
-						</div>
-						<div  class="navbar-header navbar-right" >
-							<a  href="samsung.php?model=Samsung">
-								<button class="btn btn-default navbar-btn " >more</button>
-							</a>
-						</div>
-					</div>
-				</nav>
-
-                <?php
-                require_once('dbconf.php');
-                $sql="select id,namee,photo,price from network where brand ='Samsung' ORDER BY id DESC limit 4";
-                $result = $conn->query($sql);
-
-                    while ($row=mysqli_fetch_object($result)){
-                    echo "
-                        <a href='detail.php?id=$row->id' >
-                            <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
-                                <div class=\"thumbnail\" style='height: 250px;'>
-                                    <img src=\"img/".$row->photo."\" alt=\"...\">
-                                    <center><div class=\"caption\">
-                                        $row->namee
-                                    </div></center>
-                                    <center><div style='color: red'>$row->price</div></center>
-                                </div>
-                            </div>
-                        </a>
-    
-                    ";
-                    }
-                ?>
-			</div>
-<!--            Samsung-->
-			<div class="thumbnail panel panel-default  col-md-12 col-xs-12 col-sm-12" >
-				<nav class="navbar navbar-default" id="pageheader">
-					<div class="container-fluid">
-						<div class="navbar-header">
-							<a class="navbar-brand" href="#">
-								<img alt="Brand" src="img\iphone-brand.png" style=" height: 30px;">
-							</a>
-						</div>
-						<div  class="navbar-header navbar-right" >
-							<a  href="samsung.php?model=iphone">
-								<button class="btn btn-default navbar-btn " >more</button>
-							</a>
-						</div>
-					</div>
-				</nav>
-                    <?php
-                    require_once('dbconf.php');
-                    //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
-                    $sql="select id,namee,photo,price from network where brand ='iphone' ORDER BY id DESC limit 4";
-                    $result = $conn->query($sql);
-
-                    while ($row = mysqli_fetch_object($result)) {
-                        echo"
-                                
-                                    <a href='detail.php?id=$row->id' >
-                                       <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
-                        <div class=\"thumbnail\" style='height: 220px;'>
-                            <img src=\"img/".$row->photo."\" alt=\"...\">
-                            <center><div class=\"caption\">
-                                $row->namee
-                                </div></center>
-                             <center><div style='color: red'>$row->price</div></center>
-                            </div>
-                        </div></a>
-                            ";
-                    }
-
-                    ?>
-
-			</div>
-			<div class="thumbnail panel panel-default col-md-12 col-xs-12 col-sm-12" >
-				<nav class="navbar navbar-default" id="pageheader">
-					<div class="container-fluid">
-						<div class="navbar-header">
-							<a class="navbar-brand" href="#">
-								<img alt="Brand" src="img\oppo.png" style=" height: 30px;">
-							</a>
-						</div>
-						<div  class="navbar-header navbar-right" >
-							<a  href="samsung.php?model=oppo">
-								<button class="btn btn-default navbar-btn " >more</button>
-							</a>
-						</div>
-					</div>
-				</nav>
-                    <?php
-                    require_once('dbconf.php');
-                    //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
-                    $sql="select id,namee,photo,price from network where brand ='oppo' ORDER BY id DESC limit 4";
-                    $result = $conn->query($sql);
-
-                    while ($row = mysqli_fetch_object($result)) {
-                        echo"
-                                    
-                                        <a href='detail.php?id=$row->id' >
-                                           <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
-                            <div class=\"thumbnail\" style='height: 220px;'>
-                                <img src=\"img/".$row->photo."\" alt=\"...\">
-                                <center><div class=\"caption\">
-                                    $row->namee
-                                    </div></center>
-                                <center><div style='color: red'>$row->price</div></center>
-                                </div>
-                            </div></a>
-                                ";
-                    }
-
-                    ?>
-
-			</div>
-<!--			<div class="thumbnail panel panel-default  col-md-12 col-xs-12 col-sm-12" >-->
-<!--				<nav class="navbar navbar-default" id="pageheader">-->
-<!--					<div class="container-fluid">-->
-<!--						<div class="navbar-header">-->
-<!--							<a class="navbar-brand" href="#">-->
-<!--								<img alt="Brand" src="img\sugar.jpg" style=" height: 20px;">-->
-<!--							</a>-->
-<!--						</div>-->
-<!--						<div  class="navbar-header navbar-right" >-->
-<!--							<a  href="samsung.php?model=sugar">-->
-<!--								<button class="btn btn-default navbar-btn " >more</button>-->
-<!--							</a>-->
-<!--						</div>-->
-<!--					</div>-->
-<!--				</nav>-->
-<!--                        --><?php
-//                        require_once('dbconf.php');
-//                        //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
-//                        $sql="select id,namee,photo from network where brand like 'sugar' limit 4";
-//                        $result = $conn->query($sql);
-//
-//                        while ($row = mysqli_fetch_object($result)) {
-//                            echo"
-//
-//                            <a href='detail.php?id=$row->id' >
-//                            <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
-//                                <div class=\"thumbnail\">
-//                                    <img src=\"img/".$row->photo."\" alt=\"...\">
-//                                    <div class=\"caption\">
-//
-//                                        $row->namee
-//                                     </div>
-//                                 </div>
-//                             </div></a>
-//                                    ";
-//                        }
-//
-//                        ?>
-<!--            </div>-->
-        </div>
         <div class="panel col-md-2 col-xs-2" style="background-color: #f0f0f5">
             <div class="list-group">
                 <a href="#" class="list-group-item active">
-                    Accessories
+                    Mobile Phone
                 </a>
-                <a href="accessoriesDetail.php?model=Camera" class="list-group-item">Action Camera</a>
-                <a href="accessoriesDetail.php?model=Bluetooth" class="list-group-item">Bluetooth HeadSet</a>
-                <a href="accessoriesDetail.php?model=Bottle" class="list-group-item">Bottle</a>
-                <a href="accessoriesDetail.php?model=Charger" class="list-group-item">Charger</a>
+                    <?php
+                    require_once ('dbconf.php');
+                    $sql="select *from new_model";
+                    $result=$conn->query($sql);
+                    while ($row=mysqli_fetch_object($result)) {
+                        echo "
+                        
+                        <a href=\"samsung.php?model=$row->namey\" class=\"list-group-item\">$row->namey</a>
+                   
+             
+                
+            ";
+        }
+        ?>
             </div>
         </div>
-    </div>
+<!--		<div class="panel col-md-2 col-xs-2" style="background-color: #f0f0f5">-->
+<!--            <div class="list-group">-->
+<!--                <a href="#" class="list-group-item active">-->
+<!--                   Mobile Phone-->
+<!--                </a>-->
+<!--                <a href="samsung.php?model=Huawei" class="list-group-item">Huawei</a>-->
+<!--                <a href="samsung.php?model=Samsung" class="list-group-item">Samsung</a>-->
+<!--                <a href="samsung.php?model=iphone" class="list-group-item">iphone</a>-->
+<!--                <a href="samsung.php?model=oppo" class="list-group-item">oppo</a>-->
+<!--            </div>-->
+<!--		</div>-->
+        <div class='thumbnail panel panel-default  col-md-8 col-xs-8 col-sm-8' >
 
+
+                <?php
+                require_once('dbconf.php');
+                //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
+                $sql1="select *from new_model";
+//                $sql1="select *from new_model m join network n on m.namey = n.brand where n.brand='Huawei' ORDER by id_mode DESC";
+                $result1 = $conn->query($sql1);
+                while ($row1 = mysqli_fetch_object($result1)) {
+//                    echo $row1->namey."<br>";
+
+
+
+
+                    echo "
+             <div class='thumbnail panel panel-default  col-md-12 col-xs-12 col-sm-12' >
+                <nav class='navbar navbar-default' id='pageheader'>
+                            <div class='container-fluid'>
+                                <div class='navbar-header'>
+                                <img alt='Brand' src=\"img/" . $row1->photo_model . "\" style=\"width: 100px; height: 35px; margin-top: 10px;\">
+
+                                </div>
+                                <div  class=\"navbar-header navbar-right\" >
+                                    <a  href=\"samsung.php?model='$row1->brand'\">
+                                        <button class=\"btn btn-default navbar-btn \" id=\"btn\">more</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </nav>
+                        </div> 
+                ";
+
+//                    $sql="select *from new_model m join network n on n.namee = m.brand where m.namey='$row1->namey' ORDER by id DESC ";
+                    $sql="select *from new_model m join network n on m.namey = n.brand where n.brand='$row1->namey' ORDER by id DESC limit 4";
+                    $result = $conn->query($sql);
+
+                    while ($row = mysqli_fetch_object($result)) {
+                        echo "
+                     <a href='detail.php?id=$row->id' >
+                         <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
+                            <div class=\"thumbnail\" style='height: 220px;'>
+                                <img src=\"img/" . $row->photo . "\" alt=\"...\">
+                                <div class=\"caption\">
+                                    $row->namee
+                                    </div>
+                                    <center><div style='color: red'>$row->price</div></center>
+                                </div>
+                            </div></a>
+
+
+               ";
+                    }
+                }
+
+//        $sql1 = "select *from new_model m join network n on n.brand=m.namey ORDER by id DESC limit 4";
+//        $result1 = $conn->query($sql1);
+//        while ($row = mysqli_fetch_object($result1)) {
+//            echo "
+//
+//
+//                        ";
+//                        }
+//
+                        ?>
+
+
+
+
+
+    </div>
+<div class="panel col-md-2 col-xs-2" style="background-color: #f0f0f5">
+    <div class="list-group">
+        <a href="#" class="list-group-item active">
+            Accessories
+        </a>
+        <a href="accessoriesDetail.php?model=Camera" class="list-group-item">Action Camera</a>
+        <a href="accessoriesDetail.php?model=Bluetooth" class="list-group-item">Bluetooth HeadSet</a>
+        <a href="accessoriesDetail.php?model=Bottle" class="list-group-item">Bottle</a>
+        <a href="accessoriesDetail.php?model=Charger" class="list-group-item">Charger</a>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#search_txt").keyup(function(){
+            var txt = $("#search_txt").val();
+            $("#result").show();
+            $("#display").hide();
+            if(txt != ''){
+                $.ajax({
+                    url: "processSearch.php",
+                    method: "post",
+                    data: {search:txt},
+                    dataType: "text",
+                    success:function(data){
+                        $("#result").html(data);
+                    }
+
+                });
+            }else if(txt == ''){
+                $("#result").html('');
+                $("#result").hide();
+                $("#display").show();
+            }
+        });
+    });
+</script>
 
 	</body>
 	</html>

@@ -187,40 +187,75 @@
     </a>
 </div>
 	<div class="container col-md-11  col-sm-11 col-xs-11 " id="container">
+            <div class="panel col-md-2 col-xs-2" style="background-color: #f0f0f5">
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">
+                        Mobile Phone
+                    </a>
+                    <?php
+                    require_once ('dbconf.php');
+                    $sql="select *from new_model";
+                    $result=$conn->query($sql);
+                    while ($row=mysqli_fetch_object($result)) {
+                        echo "
+                            
+                            <a href=\"samsung.php?model=$row->namey\" class=\"list-group-item\">$row->namey</a>
+                    
+                ";
+                    }
+                    ?>
+                </div>
+            </div>
 
-			<div class="thumbnail panel panel-default  col-md-8 col-md-offset-2 col-xs-8 col-sm-8" >
-				<nav class="navbar navbar-default" id="pageheader">
-					<div class="container-fluid">
-						<div class="navbar-header">
-							<a class="navbar-brand" href="#">
-								<img alt="Brand" src="img\<?php echo $model ?>.png" style="width: 100px; height: 50px;margin-top: -15px;">
-							</a>
-						</div>
-					</div>
-				</nav>
+			<div class="thumbnail panel panel-default  col-md-8 col-xs-8 col-sm-8" >
+
 
                 <?php
+
                 require_once('dbconf.php');
 
-                $sql="select * from network where brand = '$model'";
-//                echo $sql;
-                $result = $conn->query($sql);
+                //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
+//                $sql1="select *from new_model where namey='$model'";
+                $sql1="select *from new_model m join network n on m.namey = n.brand where n.brand='$model'";
+                $result1 = $conn->query($sql1);
+                $row1 = mysqli_fetch_object($result1);
 
-                while ($row=mysqli_fetch_object($result)){
                     echo "
-                        <a href='detail.php?id=$row->id' >
-                            <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
-                                <div class=\"thumbnail\">
-                                    <img src=\"img/".$row->photo."\" alt=\"...\">
-                                    <div class=\"caption\">
-                                        $row->namee
-                                    </div>
+             <div class='thumbnail panel panel-default  col-md-12 col-xs-12 col-sm-12' >
+                <nav class='navbar navbar-default' id='pageheader'>
+                            <div class='container-fluid'>
+                                <div class='navbar-header'>
+                                <img alt='Brand' src=\"img/" . $row1->photo_model . "\" style=\"width: 100px; height: 35px; margin-top: 10px;\">
+
                                 </div>
+                                
                             </div>
-                        </a>
-    
-                    ";
+                        </nav>
+                        </div> 
+                ";
+
+//                    $sql="select *from new_model m join network n on n.namee = m.brand where m.namey='$row1->namey' ORDER by id DESC ";
+                    $sql="select *from new_model m join network n on m.namey = n.brand where m.namey='$row1->namey' ORDER by id DESC ";
+                    $result = $conn->query($sql);
+
+                    while ($row = mysqli_fetch_object($result)) {
+                        echo "
+                     <a href='detail.php?id=$row->id' >
+                         <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
+                            <div class=\"thumbnail\" style='height: 220px;'>
+                                <img src=\"img/" . $row->photo . "\" alt=\"...\">
+                                <div class=\"caption\">
+                                    $row->namee
+                                    </div>
+                                    <center><div style='color: red'>$row->price</div></center>
+                                </div>
+                            </div></a>
+
+
+               ";
+
                 }
+
                 ?>
 
 
