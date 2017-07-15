@@ -191,21 +191,6 @@
             $result = mysqli_query($db,$sql);
             while ($row = mysqli_fetch_object($result)) {
                 echo "
-                    <div id=\"$row->id\" class=\"flex-item-2\">
-                            <div class='col-md-12  col-sm-12'>
-                                <div  class='col-md-1 col-md-offset-5' method=\"request\">
-                                    <a href=\"delete.php\" onClick=\"return confirm('Are you sure you want to delete?')\"><button>Delete
-                                        </button>
-                                    </a>
-                                </div>
-                                
-                                    <a href='edit.php?id=$row->id'>
-                                    <button  type='button'  data-toggle='modal' data-target='#up-$row->id'>
-                                        Edit
-                                    </button></a>
-                                
-                            </div>
-                    </div>
                     <div class='col-md-12'>
                         <div class='col-md-6'>
                             <img style='width: 80%;margin-top: 5%;margin-left: 10%;background-color: #c8ffff' class='panel panel-default' src='img/".$row->photo."'>
@@ -236,7 +221,38 @@
                     ";
             }
             ?>
-
+            <?php
+            $id=$_GET['id'];
+//            echo $id;
+            $db = mysqli_connect("localhost","root","","phoneshop");
+            $sql="select *from userlogin where userId='$id'";
+            $result = mysqli_query($db,$sql);
+            while ($row = mysqli_fetch_object($result)) {
+                echo "
+                    <div class='col-md-12'>
+                        <div class='col-md-6'>
+                            <img style='width: 80%;margin-top: 5%;margin-left: 10%;background-color: #c8ffff' class='panel panel-default' src='img/".$row->photo."'>
+                         </div>
+                        <div class='col-md-6'>
+                            <div class='col-md-12'>
+                                <div class='col-md-12'>
+                                        <div class='col-md-12'>
+                                            <table class=' table table-bordered'>
+                                                <tr><td style='width: 60%'>Username</td><td>$row->username</td></tr>
+                                                <tr><td>FirstName</td><td>$row->first_name</td></tr>
+                                                <tr><td>LastName</td><td>$row->last_name</td></tr>
+                                                <tr><td>Email</td><td>$row->email</td></tr>
+                                                <tr><td>Sex</td><td>$row->sex</td></tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            ";
+            }
+            ?>
             </div>
         </div>
 

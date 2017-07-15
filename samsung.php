@@ -145,121 +145,179 @@
     </div><!-- /.container-fluid -->
 </nav>
 
-<div id="carousel-example-generic" class="carousel slide col-md-12" data-ride="carousel" style="background: none; margin-top: 50px;">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-    </ol>
+    <div id="carousel-example-generic" class="carousel slide col-md-12" data-ride="carousel" style="background: none; margin-top: 50px;">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
 
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner col-md-8 col-sm-8 col-xs-8 col-md-offset-2 col-sm-offset-2 col-xs-offset-2" role="listbox" >
-        <div class="item active">
-            <img src="img/Location.png" alt="...">
-            <div class="carousel-caption">
-                ...
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner col-md-8 col-sm-8 col-xs-8 col-md-offset-2 col-sm-offset-2 col-xs-offset-2" role="listbox" >
+            <div class="item active">
+                <img src="img/Location.png" alt="...">
+                <div class="carousel-caption">
+                    ...
+                </div>
             </div>
-        </div>
-        <div class="item">
-            <img src="img/p10show1.jpg" alt="...">
-            <div class="carousel-caption">
-                ...
+            <div class="item">
+                <img src="img/p10show1.jpg" alt="...">
+                <div class="carousel-caption">
+                    ...
+                </div>
             </div>
-        </div>
-        <div class="item">
-            <img src="img/s8show1.jpg" alt="...">
-            <div class="carousel-caption">
-                ...
+            <div class="item">
+                <img src="img/s8show1.jpg" alt="...">
+                <div class="carousel-caption">
+                    ...
+                </div>
             </div>
+            ...
         </div>
-        ...
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev" style="background: none;">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next" style="background: none;">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
+    <div class="container col-md-12 col-xs-12 col-sm-12">
+        <nav class="navbar navbar-default col-md-8 col-md-offset-2">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 
-    <!-- Controls -->
-    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev" style="background: none;">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next" style="background: none;">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mobile Phones <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accessories <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
 	<div class="container col-md-11  col-sm-11 col-xs-11 " id="container">
             <div class="panel col-md-2 col-xs-2" style="background-color: #f0f0f5">
                 <div class="list-group">
                     <a href="#" class="list-group-item active">
                         Mobile Phone
                     </a>
-                    <?php
-                    require_once ('dbconf.php');
-                    $sql="select *from new_model";
-                    $result=$conn->query($sql);
-                    while ($row=mysqli_fetch_object($result)) {
-                        echo "
-                            
-                            <a href=\"samsung.php?model=$row->namey\" class=\"list-group-item\">$row->namey</a>
-                    
-                ";
-                    }
-                    ?>
+                    <a href="samsung.php?model=Huawei" class="list-group-item">Huawei</a>
+                    <a href="samsung.php?model=Samsung" class="list-group-item">Samsung</a>
+                    <a href="samsung.php?model=iphone" class="list-group-item">iphone</a>
+                    <a href="samsung.php?model=oppo" class="list-group-item">oppo</a>
                 </div>
             </div>
-
 			<div class="thumbnail panel panel-default  col-md-8 col-xs-8 col-sm-8" >
-
+				<nav class="navbar navbar-default" id="pageheader">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<a class="navbar-brand" href="#">
+								<img alt="Brand" src="img\<?php echo $model ?>.png" style="width: 100px; height: 50px;margin-top: -15px;">
+							</a>
+						</div>
+					</div>
+				</nav>
 
                 <?php
-
                 require_once('dbconf.php');
 
-                //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
-//                $sql1="select *from new_model where namey='$model'";
-                $sql1="select *from new_model m join network n on m.namey = n.brand where n.brand='$model'";
-                $result1 = $conn->query($sql1);
-                $row1 = mysqli_fetch_object($result1);
+                $sql="select * from network where brand = '$model'";
+//                echo $sql;
+                $result = $conn->query($sql);
 
+                while ($row=mysqli_fetch_object($result)){
                     echo "
-             <div class='thumbnail panel panel-default  col-md-12 col-xs-12 col-sm-12' >
-                <nav class='navbar navbar-default' id='pageheader'>
-                            <div class='container-fluid'>
-                                <div class='navbar-header'>
-                                <img alt='Brand' src=\"img/" . $row1->photo_model . "\" style=\"width: 100px; height: 35px; margin-top: 10px;\">
-
-                                </div>
-                                
-                            </div>
-                        </nav>
-                        </div> 
-                ";
-
-//                    $sql="select *from new_model m join network n on n.namee = m.brand where m.namey='$row1->namey' ORDER by id DESC ";
-                    $sql="select *from new_model m join network n on m.namey = n.brand where m.namey='$row1->namey' ORDER by id DESC ";
-                    $result = $conn->query($sql);
-
-                    while ($row = mysqli_fetch_object($result)) {
-                        echo "
-                     <a href='detail.php?id=$row->id' >
-                         <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
-                            <div class=\"thumbnail\" style='height: 220px;'>
-                                <img src=\"img/" . $row->photo . "\" alt=\"...\">
-                                <div class=\"caption\">
-                                    $row->namee
+                        <a href='detail.php?id=$row->id' >
+                            <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
+                                <div class=\"thumbnail\">
+                                    <img src=\"img/".$row->photo."\" alt=\"...\">
+                                    <div class=\"caption\">
+                                        $row->namee
                                     </div>
-                                    <center><div style='color: red'>$row->price</div></center>
                                 </div>
-                            </div></a>
-
-
-               ";
-
+                            </div>
+                        </a>
+    
+                    ";
                 }
-
                 ?>
+<!--                --><?php
+//                require_once('dbconf.php');
+//
+//                $sql="select * from accessories where Brand = '$model'";
+//                //                echo $sql;
+//                $result = $conn->query($sql);
+//
+//                while ($row=mysqli_fetch_object($result)){
+//                    echo "
+//                        <a href='detail.php?id=$row->id' >
+//                            <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
+//                                <div class=\"thumbnail\">
+//                                    <img src=\"img/".$row->photo."\" alt=\"...\">
+//                                    <center>
+//                                        <div class=\"caption\">$row->namee</div>
+//                                        <div>$row->price</div>
+//                                    </center>
+//                                </div>
+//                            </div>
+//                        </a>
+//
+//                    ";
+//                }
+//                ?>
 
 
 			</div>
-    </div>
+            <div class="panel col-md-2 col-xs-2" style="background-color: #f0f0f5">
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">
+                        Accessories
+                    </a>
+                    <a href="accessoriesDetail.php?model=Camera" class="list-group-item">Action Camera</a>
+                    <a href="accessoriesDetail.php?model=Bluetooth" class="list-group-item">Bluetooth HeadSet</a>
+                    <a href="accessoriesDetail.php?model=Bottle" class="list-group-item">Bottle</a>
+                    <a href="accessoriesDetail.php?model=Charger" class="list-group-item">Charger</a>
+                </div>
+            </div> <!--        panel col-md-2 col-xs-2-->
+    </div><!-- container col-md-11  col-sm-11 col-xs-11-->
 </body>
 </html>

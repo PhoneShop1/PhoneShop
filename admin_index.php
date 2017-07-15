@@ -333,14 +333,14 @@ if(isset($_POST['newnote'])){
                 $sql="select * from userlogin order by userId DESC";
                 $result = mysqli_query($db,$sql);
                 while ($row = mysqli_fetch_object($result)) {
-
+//                    echo $row->userId;
                     echo "
                         <div style='border: 1px solid;height: 50px' class='col-md-8 col-md-offset-1'>
-                            <div class='col-md-6' style='margin-top: 2%;'>Username: <b style='color: blue'> $row->username</b></div>
-                            <a href='edit_user.php?id=$row->userId'><div class='col-md-2' style='margin-top: 2%'><button>edit</button></div></a> 
-                            <a href='delete.php?id=$row->userId'><div class='col-md-2' style='margin-top: 2%'> <button>delete</button></div></a>
-                            <a href='delete.php?id=$row->userId'><div class='col-md-2' style='margin-top: 2%'> <button>delete</button></div></a>                            
-
+                            <div class='col-md-12'>
+                                <div class='col-md-6' style='margin-top: 2%;'>Username: <b style='color: blue'> $row->username</b></div> 
+                                <a href='delete.php?id=$row->userId'><div class='col-md-2' style='margin-top: 2%'> <button>delete</button></div></a>
+                                <a href='detail.php?id=$row->userId'><div class='col-md-2' style='margin-top: 2%'> <button>detail</button></div></a>
+                            </div>
                         </div>
                     ";
                 };
