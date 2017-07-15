@@ -1,14 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:color="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-	<title>Heng Lay Phone Shop</title>
-	<link rel="stylesheet" type="text/css" href="Public/vendors/bootstrap/css/bootstrap.min.css">
-	<meta content="width=device-width,initial-scale=1" name="viewpoet">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="phoneshop.css">
-    <script src="phoneshop.js"></script>
+    <title>Heng Lay Phone Shop</title>
     <link rel="stylesheet" type="text/css" href="Public/vendors/bootstrap/css/bootstrap.min.css">
     <meta content="width=device-width,initial-scale=1" name="viewpoet">
     <meta charset="UTF-8">
@@ -25,11 +18,9 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
-
-<?php $model = $_GET['model']; ?>
-
-<body>
+<body style="background-color: #f0f0f5;">
 <nav class="navbar navbar-default" style="background-color: #b3e0ff;">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -49,13 +40,17 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-            <form class="navbar-form navbar-right">
+            <form class="navbar-form navbar-right" action="searchPhone.php" method="get">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
+                    <input list="result" id="search_txt" name="search" type="text" class="form-control" placeholder="Search Phone">
+                    <datalist id="result">
+
+                    </datalist>
                 </div>
                 <button type="submit" class="btn btn-default">Search</button>
+
             </form>
-            <div class="nav navbar-nav navbar-right"s>
+            <div class="nav navbar-nav navbar-right">
                 <form class="navbar-form navbar-right">
                     <?php
                     session_start();
@@ -71,22 +66,32 @@
                     ?>
                 </form>
             </div>
-            </a>
+
             <ul class="nav navbar-nav navbar-right">
                 <!--                    <p><a href="LogOut.php" class="btn btn-info btn-block" id="myBtn">Log Out</a></p>-->
-                <form class="navbar-form navbar-right">
-                    <div >
-                        <a href="logout.php"> <button type="button" class="btn btn-default ">Log out</button></a>
-                    </div>
-                </form>
+                <?php
+                if(isset($_SESSION['username'])){
+                    echo "<form class=\"navbar-form navbar-right\">
+                                <div >
+                                    <a href=\"logout.php\"> <button type=\"button\" class=\"btn btn-default \">Log out</button></a>
+                                </div>
+                            </form>";
+                }
+                ?>
+
                 <li class="dropdown">
                     <!--                        <button type="button" class="btn btn-default btn-lg"><a href="LogOut.php">log out</a></button>-->
-                    <form class="navbar-form navbar-right">
-                        <div >
-                            <button type="button" class="btn btn-default" id="myBtn">Login</button>
-                        </div>
+                    <?php
+                    if(!isset($_SESSION['username'])){
+                        echo "<form class=\"navbar-form navbar-right\">
+                                    <div >
+                                        <button type=\"button\" class=\"btn btn-default\" id=\"myBtn\">Login</button>
+                                    </div>
+            
+                                </form>";
+                    }
+                    ?>
 
-                    </form>
                     <!-- Modal -->
                     <div class="modal fade" id="myModal" role="dialog">
                         <div id="login-overlay" class="modal-dialog">
@@ -145,7 +150,7 @@
     </div><!-- /.container-fluid -->
 </nav>
 
-<div id="carousel-example-generic" class="carousel slide col-md-12" data-ride="carousel" style="background: none; margin-top: 50px;">
+<div id="carousel-example-generic" class="carousel slide col-md-8 col-md-offset-1" data-ride="carousel" style="background: none; margin-top: 50px;">
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -186,82 +191,169 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-	<div class="container col-md-11  col-sm-11 col-xs-11 " id="container">
-            <div class="panel col-md-2 col-xs-2" style="background-color: #f0f0f5">
-                <div class="list-group">
-                    <a href="#" class="list-group-item active">
-                        Mobile Phone
-                    </a>
-                    <?php
-                    require_once ('dbconf.php');
-                    $sql="select *from new_model ";
-                    $result=$conn->query($sql);
-                    while ($row=mysqli_fetch_object($result)) {
-                        echo "
+<div class="container col-md-12 col-xs-12 col-sm-12">
+    <nav class="navbar navbar-default col-md-8 col-md-offset-2">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mobile Phones <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accessories <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+<div class="container col-md-11  col-sm-11 col-xs-11 " id="container">
+    <div class="panel col-md-2 col-xs-2" style="background-color: #f0f0f5">
+        <div class="list-group">
+            <a href="#" class="list-group-item active">
+                Mobile Phone
+            </a>
+            <?php
+            require_once ('dbconf.php');
+            $sql="select *from new_model ";
+            $result=$conn->query($sql);
+            while ($row=mysqli_fetch_object($result)) {
+                echo "
                             
                             <a href=\"samsung.php?model=$row->namey\" class=\"list-group-item\">$row->namey</a>
                     
                 ";
-                    }
-                    ?>
-                </div>
-            </div>
-
-			<div class="thumbnail panel panel-default  col-md-8 col-xs-8 col-sm-8" >
-
-
-                <?php
-
-                require_once('dbconf.php');
-                    echo "$model";
-                //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
-                $sql1="select *from new_model m where m.namey='$model'";
-//                $sql1="select *from new_model m join network n on m.namey = n.brand where n.brand='$model'";
-                $result1 = $conn->query($sql1);
-                $row1 = mysqli_fetch_object($result1);
-
-                    echo "
-             <div class='thumbnail panel panel-default  col-md-12 col-xs-12 col-sm-12' >
-                <nav class='navbar navbar-default' id='pageheader'>
-                            <div class='container-fluid'>
-                                <div class='navbar-header'>
-                                <img alt='Brand' src=\"img/".$row1->photo_model."\" style=\"width: 100px; height: 35px; margin-top: 10px;\">
-
-                                </div>
-                                
-                            </div>
-                        </nav>
-                        
-                ";
-
-//                    $sql="select *from new_model m join network n on n.namee = m.brand where m.namey='$row1->namey' ORDER by id DESC ";
-                    $sql="select *from new_model m join network n on m.namey = n.brand where m.namey='$model' ORDER by id DESC ";
-                    $result = $conn->query($sql);
-
-                    while ($row = mysqli_fetch_object($result)) {
-                        echo "
-                     <a href='detail.php?id=$row->id' >
-                         <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
-                            <div class=\"thumbnail\" style='height: 220px;'>
-                                <img src=\"img/".$row->photo."\" alt=\"...\">
-                                <div class=\"caption\">
-                                    $row->namee
-                                </div>
-                                    <center><div style='color: red'>$row->price</div></center>
-                            </div>
-                         </div>
-                     </a>
-
-
-               ";
-
-                }
-                echo "</div>";
-
-                ?>
-
-
-			</div>
+            }
+            ?>
+        </div>
     </div>
+    <div class="thumbnail panel panel-default  col-md-8 col-xs-8 col-sm-8" >
+
+        <?php
+        require_once('dbconf.php');
+        $sql="select *from new_model";
+        $result = $conn->query($sql);
+        while ($row = mysqli_fetch_object($result)) {
+        echo "
+        <div class=\"thumbnail panel panel-default  col-md-12 col-xs-12 col-sm-12\" >
+            <nav class=\"navbar navbar-default\" id=\"pageheader\">
+                <div class=\"container-fluid\">
+                    <div class=\"navbar-header\">
+                        <img alt=\"Brand\" src=\"img/".$row->photo_model."\" style=\"width: 100px; height: 35px; margin-top: 10px;\">
+
+                    </div>
+                    <div  class=\"navbar-header navbar-right\" >
+                        <a  href=\"samsung.php?model=$row->namey \">
+                            <button class=\"btn btn-default navbar-btn \" id=\"btn\">more</button>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            
+            
+         
+            ";
+
+            //                        $sql = "select id,photo,namee from network ORDER by id DESC limit 4";
+//            $sql="select id,namee,photo,price from network where brand ='Huawei' ORDER BY id DESC limit 4";
+            $sql1="select *from new_model m join network n on n.brand=m.namey WHERE n.brand='$row->namey' order by id DESC limit 4";
+            $result1 = $conn->query($sql1);
+
+            while ($row1 = mysqli_fetch_object($result1)) {
+                echo"
+                            
+                <a href='detail.php?id=$row1->id' >
+                    <div class=\"panel-default col-md-2 col-xs-2 col-sm-2\" id=\"show\">
+					<div class=\"thumbnail\" style='height: 220px;'>
+						<img src=\"img/".$row1->photo."\" alt=\"...\">
+						<center><div class=\"caption\">
+							$row1->namee
+                            </div>
+                            <div style='color: red'>$row1->price</div></center>
+                        </div>
+                    </div>
+                </a>
+                
+                        ";
+
+            }
+            echo "</div>";
+        }
+
+            ?>
+
+
+    </div>
+    <div class="panel col-md-2 col-xs-2" style="background-color: #f0f0f5">
+        <div class="list-group">
+            <a href="#" class="list-group-item active">
+                Accessories
+            </a>
+            <a href="accessoriesDetail.php?model=Camera" class="list-group-item">Action Camera</a>
+            <a href="accessoriesDetail.php?model=Bluetooth" class="list-group-item">Bluetooth HeadSet</a>
+            <a href="accessoriesDetail.php?model=Bottle" class="list-group-item">Bottle</a>
+            <a href="accessoriesDetail.php?model=Charger" class="list-group-item">Charger</a>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#search_txt").keyup(function(){
+            var txt = $("#search_txt").val();
+            $("#result").show();
+            $("#display").hide();
+            if(txt != ''){
+                $.ajax({
+                    url: "processSearch.php",
+                    method: "post",
+                    data: {search:txt},
+                    dataType: "text",
+                    success:function(data){
+                        $("#result").html(data);
+                    }
+
+                });
+            }else if(txt == ''){
+                $("#result").html('');
+                $("#result").hide();
+                $("#display").show();
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
